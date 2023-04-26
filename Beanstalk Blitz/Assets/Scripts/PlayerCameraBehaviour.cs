@@ -27,7 +27,7 @@ namespace BeanstalkBlitz
             float rotateHorizontal = Input.GetAxis("Mouse X");
             float rotateVertical = Input.GetAxis("Mouse Y");
             transform.RotateAround(player.transform.position, -Vector3.up, -rotateHorizontal * mouseSensitivity); // left-right
-            transform.RotateAround(Vector3.zero, transform.right, -rotateVertical * mouseSensitivity); // up-down
+            //transform.RotateAround(Vector3.zero, transform.right, -rotateVertical * mouseSensitivity); // up-down
         }
     }
 }
