@@ -10,6 +10,7 @@ namespace BeanstalkBlitz
         private float jumpHeight;
         private float jumpSpeed;
         private bool invulnerable;
+        public Transform playerCamera;
 
         // Start is called before the first frame update
         void Start()
@@ -18,9 +19,12 @@ namespace BeanstalkBlitz
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-
+            if (Input.GetKeyDown("w"))
+            {
+                
+            }
         }
     }
 }
