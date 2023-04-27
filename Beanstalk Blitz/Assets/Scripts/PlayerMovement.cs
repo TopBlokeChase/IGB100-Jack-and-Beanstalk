@@ -21,16 +21,46 @@ namespace BeanstalkBlitz
             invulnerable = false;
             playerRb = GetComponent<Rigidbody>();
 
-            speed = 20f;
+            speed = 200f;
+            jumpSpeed = 5500f;
+        }
+        void Update()
+        {
+            jumpControls();
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (Input.GetKey("w")) {
-                playerRb.AddForce(playerCamera.forward * speed);
+            moveControls();
+        }
+
+        private void jumpControls()
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                playerRb.AddForce(new Vector3 (0, jumpSpeed, 0));
             }
         }
 
+        private void moveControls()
+        {
+            if (Input.GetKey("w"))
+            {
+                playerRb.AddForce(playerCamera.forward * speed);
+            }
+            if (Input.GetKey("a"))
+            {
+                playerRb.AddForce(-playerCamera.right * speed);
+            }
+            if (Input.GetKey("s"))
+            {
+                playerRb.AddForce(-playerCamera.forward * speed);
+            }
+            if (Input.GetKey("d"))
+            {
+                playerRb.AddForce(playerCamera.right * speed);
+            }
+        }
     }
 }
