@@ -2,65 +2,130 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Code Reference
+ * Author: Dave / GameDevelopment (Youtube)
+ * URL: https://www.youtube.com/watch?v=f473C43s8nE
+ * Title: FIRST PERSON MOVEMENT in 10 MINUTES - Unity Tutorial
+ */
+
 namespace BeanstalkBlitz
 {
     public class PlayerMovement : MonoBehaviour
     {
-        private float speed;
-        private float maxSpeed;
-        private float jumpHeight;
-        private float jumpSpeed;
-        private bool invulnerable;
+        // Movement
+        public float moveSpeed;
 
-        private Rigidbody playerRb;
-        public Transform playerCamera;
+        public float groundDrag;
 
-        // Start is called before the first frame update
+        public float jumpForce;
+        public float jumpCooldown;
+        public float airMultiplier;
+        bool readyToJump = true;
+
+        // Ground Check
+        public float playerHeight;
+        public LayerMask whatIsGround;
+        bool grounded;
+
+        // Keybinds
+        public KeyCode jumpKey = KeyCode.Space;
+
+        public Transform player;
+
+        float horizontalInput;
+        float verticalInput;
+
+        Vector3 moveDirection;
+        Rigidbody rb;
+
         void Start()
         {
-            invulnerable = false;
-            playerRb = GetComponent<Rigidbody>();
-
-            speed = 200f;
-            jumpSpeed = 5500f;
+            Debug.Log(jumpKey);
+            rb = GetComponent<Rigidbody>();
+            rb.freezeRotation = true;
         }
+
         void Update()
         {
-            jumpControls();
+            // Ground check
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
+            MyInput();
+            SpeedControl();
+
+            // Handle drag
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+            } else
+            {
+                rb.drag = 0;
+            }
         }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
-            moveControls();
+            MovePlayer();
         }
 
-        private void jumpControls()
+        private void MyInput()
         {
-            if (Input.GetKeyDown("space"))
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+
+            if (Input.GetKey(jumpKey) && readyToJump && grounded)
             {
-                playerRb.AddForce(new Vector3 (0, jumpSpeed, 0));
+                readyToJump = false;
+                Jump();
+
+                Invoke(nameof(ResetJump), jumpCooldown);
             }
         }
 
-        private void moveControls()
+        private void MovePlayer() 
         {
-            if (Input.GetKey("w"))
+            // calculate movement direction
+            moveDirection = player.forward * verticalInput + player.right * horizontalInput;
+
+
+            // On ground
+            if (grounded)
             {
-                playerRb.AddForce(playerCamera.forward * speed);
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             }
-            if (Input.GetKey("a"))
+
+            // In air
+            else if (!grounded)
             {
-                playerRb.AddForce(-playerCamera.right * speed);
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
             }
-            if (Input.GetKey("s"))
+        }
+
+        private void SpeedControl()
+        {
+            Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            // Limit velocity
+            if (flatVelocity.magnitude > moveSpeed)
             {
-                playerRb.AddForce(-playerCamera.forward * speed);
+                Vector3 maxVelocity = flatVelocity.normalized * moveSpeed;
+                rb.velocity = new Vector3(maxVelocity.x, rb.velocity.y, maxVelocity.z);
             }
-            if (Input.GetKey("d"))
-            {
-                playerRb.AddForce(playerCamera.right * speed);
-            }
+        }
+
+        private void Jump()
+        {
+            Debug.Log("Jumped");
+            // Reset y velocity
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
+
+        private void ResetJump()
+        {
+            readyToJump = true;
         }
     }
 }

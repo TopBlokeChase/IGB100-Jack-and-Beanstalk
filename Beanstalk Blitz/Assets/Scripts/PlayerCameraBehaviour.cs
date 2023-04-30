@@ -2,32 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Code Reference
+ * Author: Unity Ace (Youtube)
+ * URL: https://www.youtube.com/watch?v=5Rq8A4H6Nzw
+ * Title: First Person Camera in Unity
+ */
+
 namespace BeanstalkBlitz
 {
     public class PlayerCameraBehaviour : MonoBehaviour
     {
-        public GameObject player;
-        private Vector3 cameraOffset;
-        public float mouseSensitivity;
+        public Transform player;
+        private float mouseSensitivity = 4f;
+        float verticalAngle = 0f;
 
-        // Update is called once per frame
-        void FixedUpdate()
+        bool lockedCursor = true;
+
+        void Start()
         {
-            followPlayer();
-            lookWithMouse();
+            // Lock and hide the cursor
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
-        private void followPlayer()
+        void Update()
         {
-            transform.position = player.transform.position + -1*this.transform.forward + 1.5f*this.transform.up;
-        }
+            // Collect Mouse Input
+            float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        private void lookWithMouse()
-        {
-            float rotateHorizontal = Input.GetAxis("Mouse X");
-            float rotateVertical = Input.GetAxis("Mouse Y");
-            transform.RotateAround(player.transform.position, -Vector3.up, -rotateHorizontal * mouseSensitivity); // left-right
-            //transform.RotateAround(Vector3.zero, transform.right, -rotateVertical * mouseSensitivity); // up-down
+            // Rotate the camera around its local X axis
+            verticalAngle -= inputY;
+            verticalAngle = Mathf.Clamp(verticalAngle, -90, 90);
+            transform.localEulerAngles = Vector3.right * verticalAngle;
+
+            // Rotate the player and the camera around its Y axis
+            player.Rotate(Vector3.up * inputX);
         }
     }
 }
