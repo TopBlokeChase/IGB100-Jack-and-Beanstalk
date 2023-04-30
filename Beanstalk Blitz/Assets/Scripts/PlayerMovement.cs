@@ -23,10 +23,15 @@ namespace BeanstalkBlitz
         public float airMultiplier;
         bool readyToJump = true;
 
-        // Ground Check
+        // Ground check
         public float playerHeight;
         public LayerMask whatIsGround;
         bool grounded;
+
+        // Enemy check
+        public float stompForce;
+        public LayerMask isEnemy;
+        bool enemyBelow;
 
         // Keybinds
         public KeyCode jumpKey = KeyCode.Space;
@@ -50,6 +55,9 @@ namespace BeanstalkBlitz
             // Ground check
             grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
+            // Enemy check
+            enemyBelow = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isEnemy);
+
             MyInput();
             SpeedControl();
 
@@ -60,6 +68,12 @@ namespace BeanstalkBlitz
             } else
             {
                 rb.drag = 0;
+            }
+
+            // Handle enemy stomp
+            if (enemyBelow)
+            {
+                stompEnemy();
             }
         }
 
@@ -124,6 +138,14 @@ namespace BeanstalkBlitz
         private void ResetJump()
         {
             readyToJump = true;
+        }
+
+        private void stompEnemy()
+        {
+            // Reset y velocity
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            rb.AddForce(transform.up * stompForce, ForceMode.Impulse);
         }
     }
 }

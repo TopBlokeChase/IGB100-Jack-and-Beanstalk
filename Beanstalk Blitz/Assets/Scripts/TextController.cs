@@ -19,7 +19,7 @@ namespace BeanstalkBlitz
         void Start()
         {
             score = 0;
-            scoreTextbox.text = "Stomp on bugs (Red Capsules) before they eat through the beanstalk stem!\n" +
+            scoreTextbox.text = "Stomp on bugs (Red Boxes) before they eat through the beanstalk stem!\n" +
                                 "Reach the treasure at the top (Gold Orb) to win the game!";
         }
 
@@ -36,4 +36,3 @@ namespace BeanstalkBlitz
         }
     }
 }
-

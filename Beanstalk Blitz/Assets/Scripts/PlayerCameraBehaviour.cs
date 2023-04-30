@@ -17,7 +17,7 @@ namespace BeanstalkBlitz
         private float mouseSensitivity = 4f;
         float verticalAngle = 0f;
 
-        bool lockedCursor = true;
+        //bool lockedCursor = true;
 
         void Start()
         {
