@@ -41,7 +41,6 @@ namespace BeanstalkBlitz
 
         void Start()
         {
-            Debug.Log(jumpKey);
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
         }
@@ -116,7 +115,6 @@ namespace BeanstalkBlitz
 
         private void Jump()
         {
-            Debug.Log("Jumped");
             // Reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
