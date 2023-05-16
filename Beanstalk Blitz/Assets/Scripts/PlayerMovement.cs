@@ -48,6 +48,9 @@ namespace BeanstalkBlitz
         {
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
+
+            // Change gravity on player start. Default = (0, -9.81, 0);
+            Physics.gravity = new Vector3(0, -18f, 0);
         }
 
         void Update()
