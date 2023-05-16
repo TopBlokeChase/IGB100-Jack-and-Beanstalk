@@ -143,9 +143,7 @@ namespace BeanstalkBlitz
         private void stompEnemy()
         {
             // Reset y velocity
-            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-            rb.AddForce(transform.up * stompForce, ForceMode.Impulse);
+            rb.velocity = new Vector3(rb.velocity.x, stompForce, rb.velocity.z);
         }
     }
 }
