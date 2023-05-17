@@ -44,6 +44,10 @@ namespace BeanstalkBlitz
         Vector3 moveDirection;
         Rigidbody rb;
 
+        //Grapple gun 
+        public bool freeze;
+        public bool activeGrapple;
+
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -78,6 +82,12 @@ namespace BeanstalkBlitz
             {
                 stompEnemy();
             }
+
+            //Grapple Gun shoot Freeze mode
+            if (freeze)
+            {
+                rb.velocity = Vector3.zero;
+            }
         }
 
         void FixedUpdate()
@@ -101,12 +111,14 @@ namespace BeanstalkBlitz
 
         private void MovePlayer() 
         {
+            if (activeGrapple) return;
+
             // calculate movement direction
             moveDirection = player.forward * verticalInput + player.right * horizontalInput;
 
 
             // On ground
-            if (grounded)
+            if (grounded&& !activeGrapple)
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             }
@@ -120,6 +132,9 @@ namespace BeanstalkBlitz
 
         private void SpeedControl()
         {
+            //while grapple
+            if (activeGrapple) return;
+
             Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             // Limit velocity
@@ -148,5 +163,54 @@ namespace BeanstalkBlitz
             // Reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, stompForce, rb.velocity.z);
         }
+
+
+        //grapple hook
+        private bool enableMovementOnNextTouch;
+
+        public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+        {
+            activeGrapple = true;
+            velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+            Invoke(nameof(Setvelocity), 0.1f);
+        }
+
+        private Vector3 velocityToSet;
+        private void Setvelocity()
+        {
+            enableMovementOnNextTouch = true;
+            rb.velocity = velocityToSet;
+        }
+
+        public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+        {
+            float gravity = Physics.gravity.y;
+            float displacementY = endPoint.y - startPoint.y;
+            Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+
+            Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+            Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
+                + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+
+            return velocityXZ + velocityY;
+        }
+
+        public void ResetRestrictions()
+        {
+            activeGrapple = false;
+           
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (enableMovementOnNextTouch)
+            {
+                enableMovementOnNextTouch = false;
+                ResetRestrictions();
+
+                GetComponent<Grappling>().StopGrapple();
+            }
+        }
     }
+
 }
