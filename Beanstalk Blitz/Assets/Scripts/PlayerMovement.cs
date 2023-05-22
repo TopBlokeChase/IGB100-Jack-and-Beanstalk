@@ -13,6 +13,9 @@ namespace BeanstalkBlitz
 {
     public class PlayerMovement : MonoBehaviour
     {
+        // Change gravity on player start. Default = (0, -9.81, 0);
+        public Vector3 gravityValue = new Vector3(0, -18f, 0);
+
         // Movement
         public float moveSpeed;
 
@@ -52,9 +55,6 @@ namespace BeanstalkBlitz
         {
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
-
-            // Change gravity on player start. Default = (0, -9.81, 0);
-            Physics.gravity = new Vector3(0, -18f, 0);
         }
 
         void Update()
@@ -92,6 +92,7 @@ namespace BeanstalkBlitz
 
         void FixedUpdate()
         {
+            Physics.gravity = gravityValue;
             MovePlayer();
         }
 
