@@ -48,7 +48,6 @@ namespace BeanstalkBlitz
         Rigidbody rb;
 
         //Grapple gun 
-        
         public bool activeGrapple;
 
         void Start()
