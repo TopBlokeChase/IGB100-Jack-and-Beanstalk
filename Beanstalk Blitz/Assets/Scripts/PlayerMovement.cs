@@ -48,7 +48,7 @@ namespace BeanstalkBlitz
         Rigidbody rb;
 
         //Grapple gun 
-        public bool freeze;
+        
         public bool activeGrapple;
 
         void Start()
@@ -83,11 +83,8 @@ namespace BeanstalkBlitz
                 stompEnemy();
             }
 
-            //Grapple Gun shoot Freeze mode
-            if (freeze)
-            {
-                rb.velocity = Vector3.zero;
-            }
+            
+          
         }
 
         void FixedUpdate()
