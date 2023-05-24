@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BeanstalkBlitz; // Add this line
 
 /*
  * Code Reference
@@ -44,6 +45,15 @@ namespace BeanstalkBlitz
         Vector3 moveDirection;
         Rigidbody rb;
 
+<<<<<<< Updated upstream
+=======
+        //Grapple gun 
+        public bool activeGrapple;
+        //grapple gun swinging
+        public float swingSpeed;
+        public bool swinging;
+
+>>>>>>> Stashed changes
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -101,6 +111,12 @@ namespace BeanstalkBlitz
 
         private void MovePlayer() 
         {
+<<<<<<< Updated upstream
+=======
+            if (activeGrapple) return;
+            if (swinging) return;
+
+>>>>>>> Stashed changes
             // calculate movement direction
             moveDirection = player.forward * verticalInput + player.right * horizontalInput;
 
@@ -120,7 +136,21 @@ namespace BeanstalkBlitz
 
         private void SpeedControl()
         {
+<<<<<<< Updated upstream
+=======
+            //while grapple
+            if (activeGrapple) return;
+            if (swinging) return;
+
+>>>>>>> Stashed changes
             Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            //while swinging
+            if (swinging)
+            {
+     
+                moveSpeed = swingSpeed;
+            }
 
             // Limit velocity
             if (flatVelocity.magnitude > moveSpeed)
