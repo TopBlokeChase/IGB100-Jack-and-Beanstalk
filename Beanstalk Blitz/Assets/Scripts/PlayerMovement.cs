@@ -49,6 +49,9 @@ namespace BeanstalkBlitz
 
         //Grapple gun 
         public bool activeGrapple;
+        public float swingSpeed;
+        public bool swinging;
+
 
         void Start()
         {
@@ -71,7 +74,8 @@ namespace BeanstalkBlitz
             if (grounded)
             {
                 rb.drag = groundDrag;
-            } else
+            }
+            else
             {
                 rb.drag = 0;
             }
@@ -82,8 +86,10 @@ namespace BeanstalkBlitz
                 stompEnemy();
             }
 
+        
+
             
-          
+
         }
 
         void FixedUpdate()
@@ -106,16 +112,17 @@ namespace BeanstalkBlitz
             }
         }
 
-        private void MovePlayer() 
+        private void MovePlayer()
         {
             if (activeGrapple) return;
+            if (swinging) return;
 
             // calculate movement direction
             moveDirection = player.forward * verticalInput + player.right * horizontalInput;
 
 
             // On ground
-            if (grounded&& !activeGrapple)
+            if (grounded && !activeGrapple )
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             }
@@ -131,6 +138,7 @@ namespace BeanstalkBlitz
         {
             //while grapple
             if (activeGrapple) return;
+            if (swinging) return;
 
             Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -195,7 +203,7 @@ namespace BeanstalkBlitz
         public void ResetRestrictions()
         {
             activeGrapple = false;
-           
+
         }
 
         private void OnCollisionEnter(Collision collision)
