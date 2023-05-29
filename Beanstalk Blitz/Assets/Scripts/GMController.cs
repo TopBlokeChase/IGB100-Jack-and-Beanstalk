@@ -6,7 +6,7 @@ using System.Linq;
 public class GMController : MonoBehaviour
 {
     // Current Stems - Stores the current stems in the beanstalk
-    GameObject[] beanstalk;
+    public List<GameObject> beanstalk = new List<GameObject>();
 
     // Enemy Spawning
     public GameObject muncherPrefab;
@@ -60,6 +60,7 @@ public class GMController : MonoBehaviour
         currentStem = Instantiate(stemPrefab, spawnPoint, transform.rotation);
         spawnTime = Time.time;
         stemPrefab = loadNextStem();
+        beanstalk.Add(currentStem);
     }
 
     private GameObject loadNextStem()
