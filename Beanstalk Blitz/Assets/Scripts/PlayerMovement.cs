@@ -55,6 +55,9 @@ namespace BeanstalkBlitz
 
         void Start()
         {
+
+            winScreen = GameObject.FindGameObjectWithTag("WinScreen");
+            winScreen.SetActive(false);
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
         }
@@ -86,9 +89,13 @@ namespace BeanstalkBlitz
                 stompEnemy();
             }
 
-        
+            if (!canRotate)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
 
-            
+
 
         }
 
@@ -206,8 +213,12 @@ namespace BeanstalkBlitz
 
         }
 
+        private bool canRotate = true;
+        private GameObject winScreen;
+        private bool hasWon = false;
         private void OnCollisionEnter(Collision collision)
         {
+            Debug.Log("Collision detected");
             if (enableMovementOnNextTouch)
             {
                 enableMovementOnNextTouch = false;
@@ -215,7 +226,25 @@ namespace BeanstalkBlitz
 
                 GetComponent<Grappling>().StopGrapple();
             }
+
+            if (collision.gameObject.CompareTag("Goal") && !hasWon)
+            {
+                hasWon = true;
+
+                if (winScreen != null)
+                {
+                    winScreen.SetActive(true);
+                    Time.timeScale = 0f;
+
+                    canRotate = false;
+                }
+            }
         }
+
+
+
     }
+
+    
 
 }
