@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 93410666}
   - component: {fileID: 93410668}
   - component: {fileID: 93410667}
+  - component: {fileID: 93410669}
   m_Layer: 5
   m_Name: Pos Stem (11)
   m_TagString: Untagged
@@ -154,7 +155,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -196,6 +197,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93410665}
   m_CullTransparentMesh: 1
+--- !u!114 &93410669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93410665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &154320681
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +222,7 @@ GameObject:
   - component: {fileID: 154320682}
   - component: {fileID: 154320684}
   - component: {fileID: 154320683}
+  - component: {fileID: 154320685}
   m_Layer: 5
   m_Name: Pos Stem (4)
   m_TagString: Untagged
@@ -227,7 +243,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -269,6 +285,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154320681}
   m_CullTransparentMesh: 1
+--- !u!114 &154320685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154320681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &172043403
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +427,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 1
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -523,6 +553,7 @@ GameObject:
   - component: {fileID: 275140435}
   - component: {fileID: 275140437}
   - component: {fileID: 275140436}
+  - component: {fileID: 275140438}
   m_Layer: 5
   m_Name: Pos Stem (12)
   m_TagString: Untagged
@@ -543,7 +574,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -585,6 +616,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275140434}
   m_CullTransparentMesh: 1
+--- !u!114 &275140438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275140434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &278393326
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +641,7 @@ GameObject:
   - component: {fileID: 278393327}
   - component: {fileID: 278393329}
   - component: {fileID: 278393328}
+  - component: {fileID: 278393330}
   m_Layer: 5
   m_Name: Pos Stem (1)
   m_TagString: Untagged
@@ -617,7 +663,7 @@ RectTransform:
   m_Children:
   - {fileID: 205577401}
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -659,6 +705,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278393326}
   m_CullTransparentMesh: 1
+--- !u!114 &278393330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278393326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &287776676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1084,7 @@ GameObject:
   - component: {fileID: 368054862}
   - component: {fileID: 368054864}
   - component: {fileID: 368054863}
+  - component: {fileID: 368054865}
   m_Layer: 5
   m_Name: Pos Stem (15)
   m_TagString: Untagged
@@ -1044,7 +1105,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1086,6 +1147,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368054861}
   m_CullTransparentMesh: 1
+--- !u!114 &368054865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368054861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &378206746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1172,7 @@ GameObject:
   - component: {fileID: 378206747}
   - component: {fileID: 378206749}
   - component: {fileID: 378206748}
+  - component: {fileID: 378206750}
   m_Layer: 5
   m_Name: Pos Stem (2)
   m_TagString: Untagged
@@ -1117,7 +1193,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1159,6 +1235,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378206746}
   m_CullTransparentMesh: 1
+--- !u!114 &378206750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378206746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &385231552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1395,7 @@ GameObject:
   - component: {fileID: 405818376}
   - component: {fileID: 405818378}
   - component: {fileID: 405818377}
+  - component: {fileID: 405818379}
   m_Layer: 5
   m_Name: Pos Stem (5)
   m_TagString: Untagged
@@ -1325,7 +1416,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1367,6 +1458,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405818375}
   m_CullTransparentMesh: 1
+--- !u!114 &405818379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405818375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &415186407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,6 +2170,7 @@ GameObject:
   - component: {fileID: 947924706}
   - component: {fileID: 947924708}
   - component: {fileID: 947924707}
+  - component: {fileID: 947924709}
   m_Layer: 5
   m_Name: Pos Stem (13)
   m_TagString: Untagged
@@ -2085,7 +2191,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2127,6 +2233,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947924705}
   m_CullTransparentMesh: 1
+--- !u!114 &947924709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947924705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,6 +2458,7 @@ GameObject:
   - component: {fileID: 1044405391}
   - component: {fileID: 1044405393}
   - component: {fileID: 1044405392}
+  - component: {fileID: 1044405394}
   m_Layer: 5
   m_Name: Pos Stem (3)
   m_TagString: Untagged
@@ -2358,7 +2479,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2400,6 +2521,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044405390}
   m_CullTransparentMesh: 1
+--- !u!114 &1044405394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044405390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &1049280202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,7 +2640,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 747596639}
-  - {fileID: 185506587}
   - {fileID: 278393327}
   - {fileID: 378206747}
   - {fileID: 1044405391}
@@ -2521,6 +2655,7 @@ Transform:
   - {fileID: 947924706}
   - {fileID: 1329669607}
   - {fileID: 368054862}
+  - {fileID: 185506587}
   m_Father: {fileID: 1996316107}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2535,6 +2670,7 @@ GameObject:
   - component: {fileID: 1127824937}
   - component: {fileID: 1127824939}
   - component: {fileID: 1127824938}
+  - component: {fileID: 1127824940}
   m_Layer: 5
   m_Name: Pos Stem (10)
   m_TagString: Untagged
@@ -2555,7 +2691,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2597,6 +2733,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127824936}
   m_CullTransparentMesh: 1
+--- !u!114 &1127824940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127824936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &1200270536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,6 +2952,7 @@ GameObject:
   - component: {fileID: 1329669607}
   - component: {fileID: 1329669609}
   - component: {fileID: 1329669608}
+  - component: {fileID: 1329669610}
   m_Layer: 5
   m_Name: Pos Stem (14)
   m_TagString: Untagged
@@ -2822,7 +2973,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2864,6 +3015,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329669606}
   m_CullTransparentMesh: 1
+--- !u!114 &1329669610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329669606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &1357104642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,6 +3258,7 @@ GameObject:
   - component: {fileID: 1467746103}
   - component: {fileID: 1467746105}
   - component: {fileID: 1467746104}
+  - component: {fileID: 1467746106}
   m_Layer: 5
   m_Name: Pos Stem (7)
   m_TagString: Untagged
@@ -3113,7 +3279,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3155,6 +3321,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467746102}
   m_CullTransparentMesh: 1
+--- !u!114 &1467746106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467746102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &1481194315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,6 +3346,7 @@ GameObject:
   - component: {fileID: 1481194316}
   - component: {fileID: 1481194318}
   - component: {fileID: 1481194317}
+  - component: {fileID: 1481194319}
   m_Layer: 5
   m_Name: Pos Stem (8)
   m_TagString: Untagged
@@ -3186,7 +3367,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3228,6 +3409,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481194315}
   m_CullTransparentMesh: 1
+--- !u!114 &1481194319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481194315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &1513759099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,6 +3536,7 @@ GameObject:
   - component: {fileID: 1564388240}
   - component: {fileID: 1564388242}
   - component: {fileID: 1564388241}
+  - component: {fileID: 1564388243}
   m_Layer: 5
   m_Name: Pos Stem (6)
   m_TagString: Untagged
@@ -3361,7 +3557,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3403,6 +3599,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564388239}
   m_CullTransparentMesh: 1
+--- !u!114 &1564388243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564388239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}
 --- !u!1 &1653198599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3780,13 @@ MonoBehaviour:
   stemPrefabList:
   - {fileID: 9031058413703628650, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   spawnAnchor: {fileID: 2040116184}
-  Map: {fileID: 0}
+  stemMaxHealth: 4
+  Map: {fileID: 1125688047}
+  StemGreen: {fileID: 2800000, guid: c85cc22a881e60146acc9756279445cd, type: 3}
+  StemYellow: {fileID: 2800000, guid: 7955e7042ede17b45a1bdc90870cb970, type: 3}
+  StemOrange: {fileID: 2800000, guid: 259e786130b9bd54688b7fa4cb416176, type: 3}
+  StemRed: {fileID: 2800000, guid: a21aae68301c291489fb7b0ae35a4c5e, type: 3}
+  stemScript: {fileID: 0}
 --- !u!1 &1864458240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,6 +4200,7 @@ GameObject:
   - component: {fileID: 2054678409}
   - component: {fileID: 2054678411}
   - component: {fileID: 2054678410}
+  - component: {fileID: 2054678412}
   m_Layer: 5
   m_Name: Pos Stem (9)
   m_TagString: Untagged
@@ -4004,7 +4221,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125688048}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4046,3 +4263,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054678408}
   m_CullTransparentMesh: 1
+--- !u!114 &2054678412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054678408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 0}
+  noneTexture: {fileID: 0}

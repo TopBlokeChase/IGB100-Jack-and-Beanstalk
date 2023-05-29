@@ -10,8 +10,11 @@ public class GMController : MonoBehaviour
 
     // Enemy Spawning
     public GameObject muncherPrefab;
-    //public GameObject bonkerPrefab;
-    //public GameObject webslingerPrefab;
+    public float muncherSpawnTime;
+    public GameObject bonkerPrefab;
+    public float bonkerSpawnTime;
+    public GameObject webslingerPrefab;
+    public float webslingerSpawnTime;
 
     // Stem Spawning
     public int startingSize;
@@ -25,10 +28,19 @@ public class GMController : MonoBehaviour
     private Vector3 spawnOffset;
     private Vector3 spawnPoint;
 
+    // Stem stats
+    [SerializeField]
+    int stemMaxHealth;
+
     // Map Control
     public GameObject Map;
-
-    
+    public Texture stemGreen;
+    public Texture stemYellow;
+    public Texture stemOrange;
+    public Texture stemRed;
+    [SerializeField]
+    StemStatTracker stemScript;
+    MapStem mapScript;
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +70,42 @@ public class GMController : MonoBehaviour
         }
         
         MapController();
+        EnemySpawner();
+    }
+    private void EnemySpawner()
+    {
+        
     }
 
     private void MapController()
     {
-
+        for (int i = 0; i < beanstalk.Count; i++)
+        {
+            stemScript = beanstalk[i].GetComponent<StemStatTracker>();
+            switch (stemScript.Health)
+            {
+                case 0:
+                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript.removeTexture();
+                    break;
+                case 1:
+                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript.setTexture(stemRed);
+                    break;
+                case 2:
+                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript.setTexture(stemOrange);
+                    break;
+                case 3:
+                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript.setTexture(stemYellow);
+                    break;
+                case 4:
+                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript.setTexture(stemGreen);
+                    break;
+            }
+        }
     }
 
     private void GameStart()
@@ -81,6 +124,8 @@ public class GMController : MonoBehaviour
     private void SpawnStem()
     {
         currentStem = Instantiate(stemPrefab, spawnPoint, transform.rotation);
+        stemScript = currentStem.GetComponent<StemStatTracker>();
+        stemScript.InitialiseVariables(stemMaxHealth);
         spawnTime = Time.time;
         stemPrefab = LoadNextStem();
         beanstalk.Add(currentStem);
