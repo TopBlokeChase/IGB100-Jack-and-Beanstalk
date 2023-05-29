@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 9031058413703628654}
   - component: {fileID: 9031058413703628653}
   - component: {fileID: 9031058413703628656}
+  - component: {fileID: 2187957514538798432}
   m_Layer: 10
   m_Name: Stem1
   m_TagString: Untagged
@@ -357,6 +358,18 @@ CapsuleCollider:
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2187957514538798432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031058413703628650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2e0536815106541b8b9bfca2da94b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9176991002468473472
 GameObject:
   m_ObjectHideFlags: 0
