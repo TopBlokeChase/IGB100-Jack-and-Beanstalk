@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
+    public Image crosshairImage;
     public GameObject pauseMenuUI;
     private SwingingDone swingingDoneScript;
     private Grappling grapplingScript;
@@ -52,6 +53,12 @@ public class PauseMenu : MonoBehaviour
         // Set the mouse visibility and lock state
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+
+        if (crosshairImage != null)
+        {
+            crosshairImage.enabled = true; 
+        }
     }
 
     void Pause()
@@ -70,9 +77,14 @@ public class PauseMenu : MonoBehaviour
             grapplingScript.enabled = false;
         }
 
-        // Set the mouse visibility and unlock state
+        
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        if (crosshairImage != null)
+        {
+            crosshairImage.enabled = false; 
+        }
     }
 
     public void LoadMenu()
