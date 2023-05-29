@@ -14,6 +14,7 @@ public class GMController : MonoBehaviour
     //public GameObject webslingerPrefab;
 
     // Stem Spawning
+    public int startingSize;
     float spawnTime;
     public float spawnInterval = 10f;
 
@@ -44,6 +45,12 @@ public class GMController : MonoBehaviour
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
         spawnPoint = spawnAnchor.transform.position + spawnOffset;
         SpawnStem();
+        while (startingSize > 1)
+        {
+            SpawnStem();
+            startingSize--;
+        }
+        
     }
 
     // Update is called once per frame
