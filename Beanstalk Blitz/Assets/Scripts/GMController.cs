@@ -15,6 +15,7 @@ public class GMController : MonoBehaviour
 
     // Stem Spawning
     public int startingSize;
+    public int maxSizeStalk;
     float spawnTime;
     public float spawnInterval = 10f;
     public List<GameObject> stemPrefabList;
@@ -48,11 +49,14 @@ public class GMController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time - spawnTime > spawnInterval)
+        if (beanstalk.Count < maxSizeStalk)
         {
-            SpawnStem();
+            if (Time.time - spawnTime > spawnInterval)
+            {
+                SpawnStem();
+            }
         }
-
+        
         MapController();
     }
 
