@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public Image mapImage;
     public Image crosshairImage;
     public GameObject pauseMenuUI;
     private SwingingDone swingingDoneScript;
@@ -59,6 +60,10 @@ public class PauseMenu : MonoBehaviour
         {
             crosshairImage.enabled = true; 
         }
+        if (mapImage != null)
+        {
+            mapImage.enabled = true;
+        }
     }
 
     void Pause()
@@ -84,6 +89,10 @@ public class PauseMenu : MonoBehaviour
         if (crosshairImage != null)
         {
             crosshairImage.enabled = false; 
+        }
+        if (mapImage != null)
+        {
+            mapImage.enabled = false;
         }
     }
 
