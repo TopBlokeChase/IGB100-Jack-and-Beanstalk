@@ -9,20 +9,32 @@ public class StemStatTracker : MonoBehaviour
     [SerializeField]
     private int maxHealth;
 
-    public int Health
-    {
-        get { return health; }
-    }
+    [SerializeField]
+    bool hasMuncher;
+    [SerializeField]
+    bool hasBonker;
+    [SerializeField]
+    bool hasWebslinger;
 
-    public int MaxHealth
-    {
-        get { return maxHealth; }
-    }
+    [SerializeField]
+    bool hasBean;
+
+    // Get methods
+    public int Health { get { return health; } }
+    public int MaxHealth { get { return maxHealth; } }
+
+    public bool HasMuncher { get { return hasMuncher; } }
+    public bool HasBonker { get { return hasBonker; } }
+    public bool HasWebslinger { get { return hasWebslinger; } }
+    public bool HasBean { get { return hasBean; } }
 
     public void InitialiseVariables(int value)
     {
         maxHealth = value;
         health = value;
+        hasMuncher = false;
+        hasBonker = false;
+        hasWebslinger = false;
     }
 
     public void changeHealth(int value)
@@ -35,5 +47,25 @@ public class StemStatTracker : MonoBehaviour
         {
             health = 0;
         }
+    }
+
+    public void ToggleMuncher(bool state)
+    {
+        hasMuncher = state;
+    }
+
+    public void ToggleBonker(bool state)
+    {
+        hasBonker = state;
+    }
+
+    public void ToggleWebslinger(bool state)
+    {
+        hasWebslinger = state;
+    }
+
+    public void ToggleBean(bool state)
+    {
+        hasBean = state;
     }
 }

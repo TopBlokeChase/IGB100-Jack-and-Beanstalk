@@ -10,13 +10,24 @@ public class GMController : MonoBehaviour
 
     // Enemy Spawning
     public GameObject muncherPrefab;
-    public float muncherSpawnTime;
+    private float muncherSpawnTime;
+    public float muncherinterval;
+
     public GameObject bonkerPrefab;
-    public float bonkerSpawnTime;
+    private float bonkerSpawnTime;
+    public float bonkerinterval;
+
     public GameObject webslingerPrefab;
-    public float webslingerSpawnTime;
+    private float webslingerSpawnTime;
+    public float webslingerinterval;
+
+    // Bean Spawning
+    /*public GameObject beanPrefab;
+    private float beanSpawnTime;
+    public float beanInterval;*/
 
     // Stem Spawning
+    Vector3 enemySpawnPoint;
     public int startingSize;
     public int maxSizeStalk;
     float spawnTime;
@@ -72,9 +83,64 @@ public class GMController : MonoBehaviour
         MapController();
         EnemySpawner();
     }
+
+    private GameObject RandomStem()
+    {
+        return beanstalk[Random.Range(0, beanstalk.Count)];
+    }
+
     private void EnemySpawner()
     {
-        
+        if (Time.time - muncherSpawnTime > muncherinterval)
+        {
+            SpawnMuncher();
+        }
+    }
+
+    private void SpawnMuncher()
+    {
+        if (Time.time - muncherSpawnTime > muncherinterval)
+        {
+            GameObject stemSegment;
+            int spawnTries = 0;
+            while (true)
+            {
+                stemSegment = RandomStem();
+                stemScript = stemSegment.GetComponent<StemStatTracker>();
+                if (!stemScript.HasMuncher)
+                {
+                    break;
+                }
+                spawnTries++;
+                if (spawnTries >= beanstalk.Count)
+                {
+                    break;
+                }
+            }
+            int randomIndex = Random.Range(2, 5);
+            Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
+            enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
+            GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
+        }
+        muncherSpawnTime = Time.time;
+    }
+
+    private void SpawnBonker()
+    {
+        if (Time.time - muncherSpawnTime > muncherinterval)
+        {
+
+        }
+    }
+
+    private void SpawnWebslinger()
+    {
+
+    }
+
+    private void SpawnBean()
+    {
+
     }
 
     private void MapController()
