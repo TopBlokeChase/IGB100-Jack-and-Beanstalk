@@ -56,11 +56,14 @@ namespace BeanstalkBlitz
         void Start()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             winScreen = GameObject.FindGameObjectWithTag("WinScreen");
             winScreen.SetActive(false);
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of a247f45 (Win Screen)
 =======
 >>>>>>> parent of a247f45 (Win Screen)
             rb = GetComponent<Rigidbody>();
