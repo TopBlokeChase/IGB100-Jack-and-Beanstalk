@@ -3785,7 +3785,7 @@ MonoBehaviour:
   stemPrefabList:
   - {fileID: 9031058413703628650, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   spawnAnchor: {fileID: 2040116184}
-  stemMaxHealth: 4
+  stemMaxHealth: 3
   Map: {fileID: 1125688047}
   stemGreen: {fileID: 2800000, guid: c85cc22a881e60146acc9756279445cd, type: 3}
   stemYellow: {fileID: 2800000, guid: 7955e7042ede17b45a1bdc90870cb970, type: 3}
