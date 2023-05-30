@@ -2444,6 +2444,9 @@ RectTransform:
 <<<<<<< HEAD
 =======
   - {fileID: 1044405391}
+<<<<<<< HEAD
+>>>>>>> parent of a247f45 (Win Screen)
+=======
 >>>>>>> parent of a247f45 (Win Screen)
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2513,6 +2516,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044405390}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+>>>>>>> parent of a247f45 (Win Screen)
+=======
 >>>>>>> parent of a247f45 (Win Screen)
 --- !u!1 &1044405390
 GameObject:
