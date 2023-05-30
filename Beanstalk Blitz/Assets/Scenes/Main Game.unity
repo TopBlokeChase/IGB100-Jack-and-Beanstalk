@@ -2393,11 +2393,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   mapImage: {fileID: 0}
   crosshairImage: {fileID: 0}
 =======
   crosshairImage: {fileID: 1017706624}
 >>>>>>> parent of 4e96e80 (cross hair disappear)
+=======
+>>>>>>> parent of f9c943d (crosshair disappear while open the pause menu)
   pauseMenuUI: {fileID: 1371094133}
 --- !u!114 &1016792671
 MonoBehaviour:
@@ -2473,6 +2476,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1371094134}
+<<<<<<< HEAD
   - {fileID: 1017706623}
 <<<<<<< HEAD
   - {fileID: 1996316107}
@@ -2491,6 +2495,8 @@ RectTransform:
 >>>>>>> parent of 4e96e80 (cross hair disappear)
 =======
 >>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
+=======
+>>>>>>> parent of f9c943d (crosshair disappear while open the pause menu)
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2499,6 +2505,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 --- !u!1 &1017706622
@@ -2907,6 +2914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rawImage: {fileID: 0}
   noneTexture: {fileID: 0}
+=======
+>>>>>>> parent of f9c943d (crosshair disappear while open the pause menu)
 --- !u!1 &1200270536
 GameObject:
   m_ObjectHideFlags: 0
