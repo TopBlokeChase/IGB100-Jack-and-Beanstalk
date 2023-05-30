@@ -69,10 +69,8 @@ public class GMController : MonoBehaviour
         var stemPrefabArray = Resources.LoadAll("Assets/Prefabs/Stems", typeof(GameObject)).Cast<GameObject>();
         foreach (var pf in stemPrefabArray)
         {
-            Debug.Log(pf);
             stemPrefabList.Add(pf);
         }
-        Debug.Log("List Count: " + stemPrefabList.Count);
 
         // Spawn first stem
         stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
