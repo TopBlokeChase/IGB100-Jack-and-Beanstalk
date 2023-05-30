@@ -30,14 +30,12 @@ public class MapStem : MonoBehaviour
 
     public void setTexture(Texture newTexture)
     {
-        Debug.Log("SetTexture " + newTexture);
         rawImage.texture = newTexture;
         rawImage.color = fullColor;
     }
 
     public void removeTexture()
     {
-        Debug.Log("RemoveTexture");
         rawImage.texture = noneTexture;
         rawImage.color = noColor;
     }

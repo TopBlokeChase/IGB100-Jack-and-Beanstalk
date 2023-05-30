@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3774,18 +3774,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beanstalk: []
   muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
+  muncherinterval: 20
+  bonkerPrefab: {fileID: 3016875491310883512, guid: f76f577418ba0d246b083d154d386f75, type: 3}
+  bonkerinterval: 40
+  webslingerPrefab: {fileID: 5575210659303873014, guid: 085745004b41cd4428cfa24390dc7fae, type: 3}
+  webslingerinterval: 60
   startingSize: 5
   maxSizeStalk: 15
-  spawnInterval: 2
+  spawnInterval: 10
   stemPrefabList:
   - {fileID: 9031058413703628650, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   spawnAnchor: {fileID: 2040116184}
   stemMaxHealth: 4
   Map: {fileID: 1125688047}
-  StemGreen: {fileID: 2800000, guid: c85cc22a881e60146acc9756279445cd, type: 3}
-  StemYellow: {fileID: 2800000, guid: 7955e7042ede17b45a1bdc90870cb970, type: 3}
-  StemOrange: {fileID: 2800000, guid: 259e786130b9bd54688b7fa4cb416176, type: 3}
-  StemRed: {fileID: 2800000, guid: a21aae68301c291489fb7b0ae35a4c5e, type: 3}
+  stemGreen: {fileID: 2800000, guid: c85cc22a881e60146acc9756279445cd, type: 3}
+  stemYellow: {fileID: 2800000, guid: 7955e7042ede17b45a1bdc90870cb970, type: 3}
+  stemOrange: {fileID: 2800000, guid: 259e786130b9bd54688b7fa4cb416176, type: 3}
+  stemRed: {fileID: 2800000, guid: a21aae68301c291489fb7b0ae35a4c5e, type: 3}
   stemScript: {fileID: 0}
 --- !u!1 &1864458240
 GameObject:
