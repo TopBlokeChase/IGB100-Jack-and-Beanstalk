@@ -31,15 +31,26 @@ public class SwingingDone : MonoBehaviour
     [Header("Input")]
     public KeyCode swingKey = KeyCode.Mouse0;
 
+    private bool isSwinging = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(swingKey)) StartSwing();
-        if (Input.GetKeyUp(swingKey)) StopSwing();
+        if (!isSwinging && Input.GetKeyDown(swingKey))
+        {
+            StartSwing();
+        }
+
+        if (isSwinging && Input.GetKeyUp(swingKey))
+        {
+            StopSwing();
+        }
 
         CheckForSwingPoints();
 
-        if (joint != null) OdmGearMovement();
+        if (joint != null)
+        {
+            OdmGearMovement();
+        }
     }
 
     private void LateUpdate()
@@ -52,23 +63,19 @@ public class SwingingDone : MonoBehaviour
         if (joint != null) return;
 
         RaycastHit sphereCastHit;
-        Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward, 
-                            out sphereCastHit, maxSwingDistance, whatIsGrappleable);
+        Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward, out sphereCastHit, maxSwingDistance, whatIsGrappleable);
 
         RaycastHit raycastHit;
-        Physics.Raycast(cam.position, cam.forward, 
-                            out raycastHit, maxSwingDistance, whatIsGrappleable);
+        Physics.Raycast(cam.position, cam.forward, out raycastHit, maxSwingDistance, whatIsGrappleable);
 
         Vector3 realHitPoint;
 
         // Option 1 - Direct Hit
         if (raycastHit.point != Vector3.zero)
             realHitPoint = raycastHit.point;
-
         // Option 2 - Indirect (predicted) Hit
         else if (sphereCastHit.point != Vector3.zero)
             realHitPoint = sphereCastHit.point;
-
         // Option 3 - Miss
         else
             realHitPoint = Vector3.zero;
@@ -88,18 +95,18 @@ public class SwingingDone : MonoBehaviour
         predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
 
-
     private void StartSwing()
     {
         // return if predictionHit not found
         if (predictionHit.point == Vector3.zero) return;
 
         // deactivate active grapple
-        if(GetComponent<Grappling>() != null)
+        if (GetComponent<Grappling>() != null)
             GetComponent<Grappling>().StopGrapple();
         pm.ResetRestrictions();
 
         pm.swinging = true;
+        isSwinging = true;
 
         swingPoint = predictionHit.point;
         joint = player.gameObject.AddComponent<SpringJoint>();
@@ -124,6 +131,7 @@ public class SwingingDone : MonoBehaviour
     public void StopSwing()
     {
         pm.swinging = false;
+        isSwinging = false;
 
         lr.positionCount = 0;
 
@@ -141,20 +149,21 @@ public class SwingingDone : MonoBehaviour
         if (Input.GetKey(KeyCode.W)) rb.AddForce(orientation.forward * horizontalThrustForce * Time.deltaTime);
 
         // shorten cable
-        if (Input.GetKey(KeyCode.Space))
+        Vector3 directionToPoint = swingPoint - transform.position;
+        if (directionToPoint.magnitude > 1f)
         {
-            Vector3 directionToPoint = swingPoint - transform.position;
             rb.AddForce(directionToPoint.normalized * forwardThrustForce * Time.deltaTime);
-
-            float distanceFromPoint = Vector3.Distance(transform.position, swingPoint);
-
-            joint.maxDistance = distanceFromPoint * 0.8f;
-            joint.minDistance = distanceFromPoint * 0.25f;
         }
+
+        float distanceFromPoint = Vector3.Distance(transform.position, swingPoint);
+
+        joint.maxDistance = distanceFromPoint * 0.8f;
+        joint.minDistance = distanceFromPoint * 0.25f;
+
         // extend cable
         if (Input.GetKey(KeyCode.S))
         {
-            float extendedDistanceFromPoint = Vector3.Distance(transform.position, swingPoint) + extendCableSpeed;
+            float extendedDistanceFromPoint = distanceFromPoint + extendCableSpeed;
 
             joint.maxDistance = extendedDistanceFromPoint * 0.8f;
             joint.minDistance = extendedDistanceFromPoint * 0.25f;
@@ -168,8 +177,7 @@ public class SwingingDone : MonoBehaviour
         // if not grappling, don't draw rope
         if (!joint) return;
 
-        currentGrapplePosition = 
-            Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
+        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
 
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, currentGrapplePosition);
