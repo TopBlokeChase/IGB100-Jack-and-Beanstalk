@@ -33,7 +33,7 @@ public class GMController : MonoBehaviour
     float spawnTime;
     public float spawnInterval = 10f;
 
-    public List<GameObject> stemPrefabList;
+    public List<GameObject> stemPrefabList = new List<GameObject>();
     private GameObject currentStem = null;
     private GameObject stemPrefab;
     public GameObject spawnAnchor;
@@ -177,7 +177,7 @@ public class GMController : MonoBehaviour
         }
     }
 
-    private void GameStart()
+    /*private void GameStart()
     {
         stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
@@ -190,7 +190,7 @@ public class GMController : MonoBehaviour
                 SpawnStem();
             }
         }
-    }
+    }*/
 
     private void SpawnStem()
     {
