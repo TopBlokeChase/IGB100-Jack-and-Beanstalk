@@ -55,8 +55,8 @@ namespace BeanstalkBlitz
 
         void Start()
         {
-
-            winScreen = GameObject.FindGameObjectWithTag("WinScreen");
+            winScreen = GameObject.Find("Win");
+            
             winScreen.SetActive(false);
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
