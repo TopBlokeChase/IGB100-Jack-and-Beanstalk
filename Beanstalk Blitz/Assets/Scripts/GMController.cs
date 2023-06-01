@@ -66,10 +66,11 @@ public class GMController : MonoBehaviour
         }
 
         // Spawn first stem
-        stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
+        /*stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
         spawnPoint = spawnAnchor.transform.position + spawnOffset;
-        SpawnStem();
+        SpawnStem();*/
+        GameStart();
     }
 
     // Update is called once per frame
@@ -89,14 +90,19 @@ public class GMController : MonoBehaviour
 
     private GameObject RandomStem()
     {
-        return beanstalk[Random.Range(0, beanstalk.Count)];
+        return beanstalk[0];                                 //************************ TESTING ONLY!  REMOVE **********************
+        if (beanstalk.Count == 0)
+        {
+            return null;
+        }
+        return beanstalk[Random.Range(0, beanstalk.Count-1)];
     }
 
     private void EnemySpawner()
     {
         if (Time.time - muncherSpawnTime > muncherinterval)
         {
-            SpawnMuncher();
+            //SpawnMuncher();
         }
     }
 
@@ -177,7 +183,7 @@ public class GMController : MonoBehaviour
         }
     }
 
-    /*private void GameStart()
+    private void GameStart()
     {
         stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
@@ -185,16 +191,15 @@ public class GMController : MonoBehaviour
         SpawnStem();
         while (startingSize > 1)
         {
-            if (Time.time - spawnTime > spawnInterval)
-            {
-                SpawnStem();
-            }
+            SpawnStem();
+            startingSize--;
         }
-    }*/
+    }
 
     private void SpawnStem()
     {
         currentStem = Instantiate(stemPrefab, spawnPoint, transform.rotation);
+        beanstalk.Add(currentStem);
         stemScript = currentStem.GetComponent<StemStatTracker>();
         stemScript.InitialiseVariables(stemMaxHealth);
         spawnTime = Time.time;
