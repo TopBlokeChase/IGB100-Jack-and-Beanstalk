@@ -3773,14 +3773,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
-  muncherinterval: 20
+  muncherinterval: 10
   bonkerPrefab: {fileID: 3016875491310883512, guid: f76f577418ba0d246b083d154d386f75, type: 3}
-  bonkerinterval: 40
+  bonkerinterval: 20
   webslingerPrefab: {fileID: 5575210659303873014, guid: 085745004b41cd4428cfa24390dc7fae, type: 3}
-  webslingerinterval: 60
+  webslingerinterval: 30
   startingSize: 5
   maxSizeStalk: 15
-  spawnInterval: 10
+  spawnInterval: 5
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   spawnAnchor: {fileID: 2040116184}
