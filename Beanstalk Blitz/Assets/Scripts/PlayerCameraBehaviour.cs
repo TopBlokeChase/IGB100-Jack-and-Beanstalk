@@ -28,17 +28,20 @@ namespace BeanstalkBlitz
 
         void Update()
         {
-            // Collect Mouse Input
-            float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
-            float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+            if (!PauseMenu.GameIsPaused)
+            {
+                // Collect Mouse Input
+                float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
+                float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-            // Rotate the camera around its local X axis
-            verticalAngle -= inputY;
-            verticalAngle = Mathf.Clamp(verticalAngle, -90, 90);
-            transform.localEulerAngles = Vector3.right * verticalAngle;
+                // Rotate the camera around its local X axis
+                verticalAngle -= inputY;
+                verticalAngle = Mathf.Clamp(verticalAngle, -90, 90);
+                transform.localEulerAngles = Vector3.right * verticalAngle;
 
-            // Rotate the player and the camera around its Y axis
-            player.Rotate(Vector3.up * inputX);
+                // Rotate the player and the camera around its Y axis
+                player.Rotate(Vector3.up * inputX);
+            }
         }
     }
 }
