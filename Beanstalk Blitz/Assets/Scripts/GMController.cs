@@ -6,7 +6,7 @@ using System.Linq;
 public class GMController : MonoBehaviour
 {
     // Current Stems - Stores the current stems in the beanstalk
-    GameObject[] beanstalk;
+    List<GameObject> beanstalk = new List<GameObject>();
 
     // Enemy Spawning
     public GameObject muncherPrefab;
@@ -27,12 +27,9 @@ public class GMController : MonoBehaviour
     public float beanInterval;*/
 
     // Stem Spawning
-<<<<<<< HEAD
     Vector3 enemySpawnPoint;
     public int startingSize;
     public int maxSizeStalk;
-=======
->>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
     float spawnTime;
     public float spawnInterval = 10f;
 
@@ -41,7 +38,6 @@ public class GMController : MonoBehaviour
     private GameObject stemPrefab;
     public GameObject spawnAnchor;
 
-<<<<<<< HEAD
     // Stem stats
     [SerializeField]
     int stemMaxHealth;
@@ -55,12 +51,9 @@ public class GMController : MonoBehaviour
     [SerializeField]
     StemStatTracker stemScript;
     MapStem mapScript;
-=======
+
     Vector3 spawnOffset;
     Vector3 spawnPoint;
-
-    
->>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
 
     // Start is called before the first frame update
     void Start()
@@ -82,7 +75,6 @@ public class GMController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-<<<<<<< HEAD
         if (beanstalk.Count < maxSizeStalk)
         {
             if (Time.time - spawnTime > spawnInterval)
@@ -192,11 +184,11 @@ public class GMController : MonoBehaviour
         spawnPoint = spawnAnchor.transform.position + spawnOffset;
         SpawnStem();
         while (startingSize > 1)
-=======
-        if (Time.time - spawnTime > spawnInterval)
->>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
         {
-            SpawnStem();
+            if (Time.time - spawnTime > spawnInterval)
+            {
+                SpawnStem();
+            }
         }
     }
 

@@ -55,17 +55,8 @@ namespace BeanstalkBlitz
 
         void Start()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-            winScreen = GameObject.FindGameObjectWithTag("WinScreen");
-            winScreen.SetActive(false);
->>>>>>> Stashed changes
-=======
->>>>>>> parent of a247f45 (Win Screen)
-=======
->>>>>>> parent of a247f45 (Win Screen)
+            //winScreen = GameObject.FindGameObjectWithTag("WinScreen");    *******************************  wiNScreen does not exists  *******************
+            //winScreen.SetActive(false);                                   *******************************  wiNScreen does not exists  *******************
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
         }
