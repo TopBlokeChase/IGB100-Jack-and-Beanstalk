@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using BeanstalkBlitz; // Add this line
 
 /*
  * Code Reference
@@ -14,6 +13,9 @@ namespace BeanstalkBlitz
 {
     public class PlayerMovement : MonoBehaviour
     {
+        // Change gravity on player start. Default = (0, -9.81, 0);
+        public Vector3 gravityValue = new Vector3(0, -18f, 0);
+
         // Movement
         public float moveSpeed;
 
@@ -45,22 +47,19 @@ namespace BeanstalkBlitz
         Vector3 moveDirection;
         Rigidbody rb;
 
-<<<<<<< Updated upstream
-=======
         //Grapple gun 
         public bool activeGrapple;
-        //grapple gun swinging
         public float swingSpeed;
         public bool swinging;
 
->>>>>>> Stashed changes
+
         void Start()
         {
+            winScreen = GameObject.Find("Win");
+            
+            winScreen.SetActive(false);
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
-
-            // Change gravity on player start. Default = (0, -9.81, 0);
-            Physics.gravity = new Vector3(0, -18f, 0);
         }
 
         void Update()
@@ -78,7 +77,8 @@ namespace BeanstalkBlitz
             if (grounded)
             {
                 rb.drag = groundDrag;
-            } else
+            }
+            else
             {
                 rb.drag = 0;
             }
@@ -88,10 +88,20 @@ namespace BeanstalkBlitz
             {
                 stompEnemy();
             }
+
+            if (!canRotate)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+
+
+
         }
 
         void FixedUpdate()
         {
+            Physics.gravity = gravityValue;
             MovePlayer();
         }
 
@@ -109,20 +119,17 @@ namespace BeanstalkBlitz
             }
         }
 
-        private void MovePlayer() 
+        private void MovePlayer()
         {
-<<<<<<< Updated upstream
-=======
             if (activeGrapple) return;
             if (swinging) return;
 
->>>>>>> Stashed changes
             // calculate movement direction
             moveDirection = player.forward * verticalInput + player.right * horizontalInput;
 
 
             // On ground
-            if (grounded)
+            if (grounded && !activeGrapple )
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             }
@@ -136,21 +143,11 @@ namespace BeanstalkBlitz
 
         private void SpeedControl()
         {
-<<<<<<< Updated upstream
-=======
             //while grapple
             if (activeGrapple) return;
             if (swinging) return;
 
->>>>>>> Stashed changes
             Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-            //while swinging
-            if (swinging)
-            {
-     
-                moveSpeed = swingSpeed;
-            }
 
             // Limit velocity
             if (flatVelocity.magnitude > moveSpeed)
@@ -178,5 +175,76 @@ namespace BeanstalkBlitz
             // Reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, stompForce, rb.velocity.z);
         }
+
+
+        //grapple hook
+        private bool enableMovementOnNextTouch;
+
+        public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+        {
+            activeGrapple = true;
+            velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+            Invoke(nameof(Setvelocity), 0.1f);
+        }
+
+        private Vector3 velocityToSet;
+        private void Setvelocity()
+        {
+            enableMovementOnNextTouch = true;
+            rb.velocity = velocityToSet;
+        }
+
+        public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+        {
+            float gravity = Physics.gravity.y;
+            float displacementY = endPoint.y - startPoint.y;
+            Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+
+            Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+            Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
+                + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+
+            return velocityXZ + velocityY;
+        }
+
+        public void ResetRestrictions()
+        {
+            activeGrapple = false;
+
+        }
+
+        private bool canRotate = true;
+        private GameObject winScreen;
+        private bool hasWon = false;
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("Collision detected");
+            if (enableMovementOnNextTouch)
+            {
+                enableMovementOnNextTouch = false;
+                ResetRestrictions();
+
+                GetComponent<Grappling>().StopGrapple();
+            }
+
+            if (collision.gameObject.CompareTag("Goal") && !hasWon)
+            {
+                hasWon = true;
+
+                if (winScreen != null)
+                {
+                    winScreen.SetActive(true);
+                    Time.timeScale = 0f;
+
+                    canRotate = false;
+                }
+            }
+        }
+
+
+
     }
+
+    
+
 }
