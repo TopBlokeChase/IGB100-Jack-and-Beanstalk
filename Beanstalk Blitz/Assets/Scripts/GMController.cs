@@ -130,7 +130,7 @@ public class GMController : MonoBehaviour
 
     private void SpawnBonker()
     {
-
+        GameObject bonker = Instantiate(bonkerPrefab, new Vector3(5, 5, 5), transform.rotation);
     }
 
     private void SpawnWebslinger()
@@ -176,6 +176,7 @@ public class GMController : MonoBehaviour
 
     private void GameStart()
     {
+        SpawnBonker();
         stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
         spawnPoint = spawnAnchor.transform.position + spawnOffset;
