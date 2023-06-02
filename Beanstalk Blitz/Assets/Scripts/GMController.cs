@@ -95,34 +95,34 @@ public class GMController : MonoBehaviour
 
     private void EnemySpawner()
     {
-        SpawnMuncher();
+        if (Time.time - muncherSpawnTime > muncherinterval)
+        {
+            SpawnMuncher();
+        }
     }
 
     private void SpawnMuncher()
     {
-        if (Time.time - muncherSpawnTime > muncherinterval)
+        GameObject stemSegment;
+        int spawnTries = 0;
+        while (true)
         {
-            GameObject stemSegment;
-            int spawnTries = 0;
-            while (true)
+            Debug.Log($"spawnTries: {spawnTries}");
+            stemSegment = RandomStem();
+            stemScript = stemSegment.GetComponent<StemStatTracker>();
+            if (!stemScript.HasMuncher)
             {
-                Debug.Log($"spawnTries: {spawnTries}");
-                stemSegment = RandomStem();
-                stemScript = stemSegment.GetComponent<StemStatTracker>();
-                if (!stemScript.HasMuncher)
-                {
-                    int randomIndex = Random.Range(2, 5);
-                    Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
-                    enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
-                    GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
-                    stemScript.ToggleBonker(true);
-                    break;
-                }
-                spawnTries++;
-                if (spawnTries >= beanstalk.Count)
-                {
-                    break;
-                }
+                int randomIndex = Random.Range(2, 5);
+                Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
+                enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
+                GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
+                stemScript.ToggleBonker(true);
+                break;
+            }
+            spawnTries++;
+            if (spawnTries >= beanstalk.Count)
+            {
+                break;
             }
         }
         muncherSpawnTime = Time.time;
@@ -130,10 +130,7 @@ public class GMController : MonoBehaviour
 
     private void SpawnBonker()
     {
-        if (Time.time - muncherSpawnTime > muncherinterval)
-        {
 
-        }
     }
 
     private void SpawnWebslinger()
