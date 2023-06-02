@@ -107,13 +107,13 @@ public class GMController : MonoBehaviour
         int spawnTries = 0;
         while (true)
         {
-            Debug.Log($"spawnTries: {spawnTries}");
+            Debug.Log($"spawnTries: {spawnTries}"); //Testing**************************************
             stemSegment = RandomStem();
             stemScript = stemSegment.GetComponent<StemStatTracker>();
             if (!stemScript.HasMuncher)
             {
                 int randomIndex = Random.Range(2, 5);
-                Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
+                Quaternion spawnRotation = stemSegment.transform.GetChild(randomIndex).rotation;
                 enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
                 GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
                 stemScript.ToggleBonker(true);
