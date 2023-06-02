@@ -90,15 +90,12 @@ public class GMController : MonoBehaviour
         {
             return null;
         }
-        return beanstalk[Random.Range(0, beanstalk.Count-1)];
+        return beanstalk[Random.Range(0, beanstalk.Count)];
     }
 
     private void EnemySpawner()
     {
-        if (Time.time - muncherSpawnTime > muncherinterval)
-        {
-            //SpawnMuncher();
-        }
+        SpawnMuncher();
     }
 
     private void SpawnMuncher()
@@ -109,10 +106,16 @@ public class GMController : MonoBehaviour
             int spawnTries = 0;
             while (true)
             {
+                Debug.Log($"spawnTries: {spawnTries}");
                 stemSegment = RandomStem();
                 stemScript = stemSegment.GetComponent<StemStatTracker>();
                 if (!stemScript.HasMuncher)
                 {
+                    int randomIndex = Random.Range(2, 5);
+                    Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
+                    enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
+                    GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
+                    stemScript.ToggleBonker(true);
                     break;
                 }
                 spawnTries++;
@@ -121,10 +124,6 @@ public class GMController : MonoBehaviour
                     break;
                 }
             }
-            int randomIndex = Random.Range(2, 5);
-            Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
-            enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
-            GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
         }
         muncherSpawnTime = Time.time;
     }
