@@ -3783,6 +3783,7 @@ MonoBehaviour:
   spawnInterval: 5
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
+  - {fileID: 5270794988972354108, guid: 21627e849962b5949b840ee400dc0e0e, type: 3}
   spawnAnchor: {fileID: 2040116184}
   stemMaxHealth: 3
   Map: {fileID: 1125688047}
