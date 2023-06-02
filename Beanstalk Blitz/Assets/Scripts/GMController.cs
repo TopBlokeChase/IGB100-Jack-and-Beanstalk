@@ -65,11 +65,7 @@ public class GMController : MonoBehaviour
             stemPrefabList.Add(pf);
         }
 
-        // Spawn first stem
-        /*stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
-        spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
-        spawnPoint = spawnAnchor.transform.position + spawnOffset;
-        SpawnStem();*/
+        // Spawn first stem segments
         GameStart();
     }
 
@@ -90,7 +86,6 @@ public class GMController : MonoBehaviour
 
     private GameObject RandomStem()
     {
-        return beanstalk[0];                                 //************************ TESTING ONLY!  REMOVE **********************
         if (beanstalk.Count == 0)
         {
             return null;
