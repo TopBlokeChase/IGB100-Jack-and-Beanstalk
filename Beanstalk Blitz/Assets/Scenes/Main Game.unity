@@ -3772,7 +3772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83249c7327c74e4fbdd8bed0c576f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muncherPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
+  muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
   muncherinterval: 1
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
   bonkerinterval: 20
