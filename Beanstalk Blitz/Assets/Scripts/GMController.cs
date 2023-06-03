@@ -27,6 +27,9 @@ public class GMController : MonoBehaviour
     private float beanSpawnTime;
     public float beanInterval;
 
+    // Tracking which stem an enemy or bean has spawned on
+    ParentStemTracker parentStemTrackerScript;
+
     // Stem Spawning
     Vector3 enemySpawnPoint;
     public int startingSize;
@@ -146,7 +149,18 @@ public class GMController : MonoBehaviour
 
     private void SpawnBean()
     {
-
+        GameObject stemSegment;
+        stemSegment = RandomStem();
+        stemScript = stemSegment.GetComponent<StemStatTracker>();
+        if (!stemScript.HasBonker)
+        {
+            stemScript.ToggleBonker(true);
+            int randomIndex = Random.Range(2, 5);
+            Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0,360), 0);
+            enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(1).position;
+            GameObject bean = Instantiate(beanPrefab, enemySpawnPoint, spawnRotation);
+        }
+        beanSpawnTime = Time.time;
     }
 
     private void MapController()
