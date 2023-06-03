@@ -6,7 +6,7 @@ using System.Linq;
 public class GMController : MonoBehaviour
 {
     // Current Stems - Stores the current stems in the beanstalk
-    GameObject[] beanstalk;
+    List<GameObject> beanstalk = new List<GameObject>();
 
     // Enemy Spawning
     public GameObject muncherPrefab;
@@ -27,21 +27,17 @@ public class GMController : MonoBehaviour
     public float beanInterval;*/
 
     // Stem Spawning
-<<<<<<< HEAD
     Vector3 enemySpawnPoint;
     public int startingSize;
     public int maxSizeStalk;
-=======
->>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
     float spawnTime;
     public float spawnInterval = 10f;
 
-    public List<GameObject> stemPrefabList;
+    public List<GameObject> stemPrefabList = new List<GameObject>();
     private GameObject currentStem = null;
     private GameObject stemPrefab;
     public GameObject spawnAnchor;
 
-<<<<<<< HEAD
     // Stem stats
     [SerializeField]
     int stemMaxHealth;
@@ -55,12 +51,9 @@ public class GMController : MonoBehaviour
     [SerializeField]
     StemStatTracker stemScript;
     MapStem mapScript;
-=======
+
     Vector3 spawnOffset;
     Vector3 spawnPoint;
-
-    
->>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
 
     // Start is called before the first frame update
     void Start()
@@ -72,17 +65,13 @@ public class GMController : MonoBehaviour
             stemPrefabList.Add(pf);
         }
 
-        // Spawn first stem
-        stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
-        spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
-        spawnPoint = spawnAnchor.transform.position + spawnOffset;
-        SpawnStem();
+        // Spawn first stem segments
+        GameStart();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-<<<<<<< HEAD
         if (beanstalk.Count < maxSizeStalk)
         {
             if (Time.time - spawnTime > spawnInterval)
@@ -97,6 +86,10 @@ public class GMController : MonoBehaviour
 
     private GameObject RandomStem()
     {
+        if (beanstalk.Count == 0)
+        {
+            return null;
+        }
         return beanstalk[Random.Range(0, beanstalk.Count)];
     }
 
@@ -110,38 +103,34 @@ public class GMController : MonoBehaviour
 
     private void SpawnMuncher()
     {
-        if (Time.time - muncherSpawnTime > muncherinterval)
+        GameObject stemSegment;
+        int spawnTries = 0;
+        while (true)
         {
-            GameObject stemSegment;
-            int spawnTries = 0;
-            while (true)
+            Debug.Log($"spawnTries: {spawnTries}"); //Testing**************************************
+            stemSegment = RandomStem();
+            stemScript = stemSegment.GetComponent<StemStatTracker>();
+            if (!stemScript.HasMuncher)
             {
-                stemSegment = RandomStem();
-                stemScript = stemSegment.GetComponent<StemStatTracker>();
-                if (!stemScript.HasMuncher)
-                {
-                    break;
-                }
-                spawnTries++;
-                if (spawnTries >= beanstalk.Count)
-                {
-                    break;
-                }
+                int randomIndex = Random.Range(2, 5);
+                Quaternion spawnRotation = stemSegment.transform.GetChild(randomIndex).rotation;
+                enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
+                GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
+                stemScript.ToggleBonker(true);
+                break;
             }
-            int randomIndex = Random.Range(2, 5);
-            Quaternion spawnRotation = Quaternion.Euler(0, -90 * (randomIndex - 2), 0);
-            enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
-            GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
+            spawnTries++;
+            if (spawnTries >= beanstalk.Count)
+            {
+                break;
+            }
         }
         muncherSpawnTime = Time.time;
     }
 
     private void SpawnBonker()
     {
-        if (Time.time - muncherSpawnTime > muncherinterval)
-        {
-
-        }
+        GameObject bonker = Instantiate(bonkerPrefab, new Vector3(5, 5, 5), transform.rotation);
     }
 
     private void SpawnWebslinger()
@@ -187,22 +176,22 @@ public class GMController : MonoBehaviour
 
     private void GameStart()
     {
+        SpawnBonker();
         stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
         spawnPoint = spawnAnchor.transform.position + spawnOffset;
         SpawnStem();
         while (startingSize > 1)
-=======
-        if (Time.time - spawnTime > spawnInterval)
->>>>>>> parent of 9aa459f (Merge branch 'main' of https://github.com/TopBlokeChase/IGB100-Jack-and-Beanstalk)
         {
             SpawnStem();
+            startingSize--;
         }
     }
 
     private void SpawnStem()
     {
         currentStem = Instantiate(stemPrefab, spawnPoint, transform.rotation);
+        beanstalk.Add(currentStem);
         stemScript = currentStem.GetComponent<StemStatTracker>();
         stemScript.InitialiseVariables(stemMaxHealth);
         spawnTime = Time.time;
