@@ -157,7 +157,7 @@ public class GMController : MonoBehaviour
         GameObject stemSegment;
         stemSegment = RandomStem();
         stemScript = stemSegment.GetComponent<StemStatTracker>();
-        if (!stemScript.HasBonker)
+        if (!stemScript.HasBean)
         {
             stemScript.ToggleBean(true);
             int randomIndex = Random.Range(2, 5);
