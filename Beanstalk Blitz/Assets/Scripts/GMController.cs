@@ -17,14 +17,15 @@ public class GMController : MonoBehaviour
     private float bonkerSpawnTime;
     public float bonkerinterval;
 
-    public GameObject webslingerPrefab;
+    // Webslinger not implemented in current version
+    /*public GameObject webslingerPrefab;
     private float webslingerSpawnTime;
-    public float webslingerinterval;
+    public float webslingerinterval;*/
 
     // Bean Spawning
-    /*public GameObject beanPrefab;
+    public GameObject beanPrefab;
     private float beanSpawnTime;
-    public float beanInterval;*/
+    public float beanInterval;
 
     // Stem Spawning
     Vector3 enemySpawnPoint;
@@ -81,7 +82,7 @@ public class GMController : MonoBehaviour
         }
         
         MapController();
-        EnemySpawner();
+        SpawnController();
     }
 
     private GameObject RandomStem()
@@ -93,7 +94,7 @@ public class GMController : MonoBehaviour
         return beanstalk[Random.Range(0, beanstalk.Count)];
     }
 
-    private void EnemySpawner()
+    private void SpawnController()
     {
         if (Time.time - muncherSpawnTime > muncherinterval)
         {
@@ -133,10 +134,11 @@ public class GMController : MonoBehaviour
         GameObject bonker = Instantiate(bonkerPrefab, new Vector3(5, 5, 5), transform.rotation);
     }
 
-    private void SpawnWebslinger()
+    // Webslinger not implemented in current version
+    /*private void SpawnWebslinger()
     {
 
-    }
+    }*/
 
     private void SpawnBean()
     {
