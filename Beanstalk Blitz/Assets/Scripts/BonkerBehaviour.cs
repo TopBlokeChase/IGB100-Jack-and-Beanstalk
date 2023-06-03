@@ -6,10 +6,17 @@ public class BonkerBehaviour : MonoBehaviour
 {
     private Vector3 spawnPoint;
     public float respawnDistance;
+    [SerializeField]
+    private GameObject parentStem;
+    private ParentStemTracker parentStemScript;
+    private StemStatTracker stemStatTracker;
     
     void Start()
     {
         spawnPoint = transform.position;
+        parentStemScript = GetComponent<ParentStemTracker>();
+        parentStem = parentStemScript.ParentStem;
+        stemStatTracker = parentStemScript.ParentScript();
     }
 
     void FixedUpdate()
@@ -28,6 +35,7 @@ public class BonkerBehaviour : MonoBehaviour
 
     public void Stomped()
     {
-
+        stemStatTracker.ToggleBonker(false);
+        Destroy(this);
     }
 }

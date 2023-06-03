@@ -258,7 +258,7 @@ namespace BeanstalkBlitz
             }
             if (other.gameObject.tag == "Muncher")
             {
-                muncherScript = other.transform.parent.gameObject.GetComponent<MuncherBehaviour>();
+                muncherScript = other.gameObject.GetComponent<MuncherBehaviour>();
                 StompEnemy("Muncher");
             }
             if (other.gameObject.tag == "Bonker")
