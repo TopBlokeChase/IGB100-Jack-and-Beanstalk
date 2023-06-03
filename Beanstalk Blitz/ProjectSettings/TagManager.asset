@@ -8,6 +8,10 @@ TagManager:
   - Goal
   - WinScreen
   - LoseScreen
+  - Bean
+  - Bonker
+  - Muncher
+  - BonkerHead
   layers:
   - Default
   - TransparentFX

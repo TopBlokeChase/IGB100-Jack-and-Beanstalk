@@ -36,6 +36,17 @@ namespace BeanstalkBlitz
         public LayerMask isEnemy;
         bool enemyBelow;
 
+        // Bean checks
+        private BeanBehaviour beanScript;
+
+        // Stomp checks
+        private MuncherBehaviour muncherScript;
+        private BonkerBehaviour bonkerScript;
+
+        // Bonk checks
+        private Vector3 bonkDirection;
+        public float bonkForce;
+
         // Keybinds
         public KeyCode jumpKey = KeyCode.Space;
 
@@ -80,12 +91,6 @@ namespace BeanstalkBlitz
             else
             {
                 rb.drag = 0;
-            }
-
-            // Handle enemy stomp
-            if (enemyBelow)
-            {
-                stompEnemy();
             }
         }
 
@@ -167,14 +172,36 @@ namespace BeanstalkBlitz
             readyToJump = true;
         }
 
-        private void stompEnemy()
+        private void StompEnemy(string enemyType)
         {
             // Play stomp sound
             //
+            switch (enemyType)
+            {
+                case "Bonker":
+                    bonkerScript.Stomped();
+                    break;
+                case "Muncher":
+                    muncherScript.Stomped();
+                    break;
+                default:
+                    break;
+            }
             // Reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, stompForce, rb.velocity.z);
         }
 
+        private void Bonked()
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            Vector3 bonkWithForce = -bonkDirection * bonkForce;
+            rb.velocity = bonkWithForce + new Vector3(0, jumpForce / 2, 0);
+        }
+
+        private void CollectBean()
+        {
+
+        }
 
         //grapple hook
         private bool enableMovementOnNextTouch;
@@ -219,6 +246,32 @@ namespace BeanstalkBlitz
                 ResetRestrictions();
 
                 GetComponent<Grappling>().StopGrapple();
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Bean")
+            {
+                beanScript = other.GetComponent<BeanBehaviour>();
+                CollectBean();
+            }
+            if (other.gameObject.tag == "Muncher")
+            {
+                muncherScript = other.transform.parent.gameObject.GetComponent<MuncherBehaviour>();
+                StompEnemy("Muncher");
+            }
+            if (other.gameObject.tag == "Bonker")
+            {
+                bonkerScript = other.transform.parent.gameObject.GetComponent<BonkerBehaviour>();
+                StompEnemy("Bonker");
+            }
+            if (other.gameObject.tag == "BonkerHead")
+            {
+                bonkDirection = other.transform.position - transform.position;
+                bonkDirection.y = 0f;
+                bonkDirection = bonkDirection.normalized;
+                Bonked();
             }
         }
     }

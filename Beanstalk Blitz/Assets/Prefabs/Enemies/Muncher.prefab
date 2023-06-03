@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 825850437582804879}
   - component: {fileID: -1548717290093538396}
+  - component: {fileID: -8950450033361272255}
+  - component: {fileID: 4775077778542367608}
+  - component: {fileID: 1552464393916895941}
   m_Layer: 9
   m_Name: Muncher
-  m_TagString: Untagged
+  m_TagString: Muncher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +53,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dad934f39fc7634895532cd56ea0272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentStem: {fileID: 0}
+--- !u!114 &-8950450033361272255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825850437582804883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79de510f88bc5e4bb57f754e69d3211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4775077778542367608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825850437582804883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1, z: 1}
+  m_Center: {x: 3, y: 1.25, z: 0}
+--- !u!65 &1552464393916895941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825850437582804883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 1.5}
+  m_Center: {x: 0.5, y: 2, z: 0}
 --- !u!1 &1396642407474017714
 GameObject:
   m_ObjectHideFlags: 0
