@@ -113,18 +113,29 @@ public class GMController : MonoBehaviour
         stemScript = stemSegment.GetComponent<StemStatTracker>();
         if (!stemScript.HasMuncher)
         {
+            stemScript.ToggleMuncher(true);
             int randomIndex = Random.Range(2, 5);
             Quaternion spawnRotation = stemSegment.transform.GetChild(randomIndex).rotation;
             enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
             GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
-            stemScript.ToggleBonker(true);
         }
         muncherSpawnTime = Time.time;
     }
 
     private void SpawnBonker()
     {
-        GameObject bonker = Instantiate(bonkerPrefab, new Vector3(5, 5, 5), transform.rotation);
+        GameObject stemSegment;
+        stemSegment = RandomStem();
+        stemScript = stemSegment.GetComponent<StemStatTracker>();
+        if (!stemScript.HasBonker)
+        {
+            stemScript.ToggleBonker(true);
+            int randomIndex = Random.Range(2, 5);
+            Quaternion spawnRotation = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(0).rotation;
+            enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(0).position;
+            GameObject bonker = Instantiate(bonkerPrefab, enemySpawnPoint, spawnRotation);
+        }
+        bonkerSpawnTime = Time.time;
     }
 
     // Webslinger not implemented in current version
@@ -171,7 +182,6 @@ public class GMController : MonoBehaviour
 
     private void GameStart()
     {
-        SpawnBonker();
         stemPrefab = stemPrefabList[Random.Range(0, stemPrefabList.Count)];
         spawnOffset = stemPrefab.transform.position - stemPrefab.transform.GetChild(0).transform.position;
         spawnPoint = spawnAnchor.transform.position + spawnOffset;

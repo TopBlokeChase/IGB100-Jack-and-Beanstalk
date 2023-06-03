@@ -37,7 +37,7 @@ public class StemStatTracker : MonoBehaviour
         hasWebslinger = false;
     }
 
-    public void changeHealth(int value)
+    public void ChangeHealth(int value)
     {
         health += value;
         if (health > maxHealth)

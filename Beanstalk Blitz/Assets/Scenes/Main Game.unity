@@ -1075,9 +1075,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1143741722790981605, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143741722790981605, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: predictionPoint
       value: 
       objectReference: {fileID: 760470294}
+    - target: {fileID: 1215016606392872113, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1215016606392872113, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: grappleKey
       value: 323
@@ -14483,14 +14491,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
-  muncherinterval: 2
+  muncherinterval: 20
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
-  bonkerinterval: 20
+  bonkerinterval: 2
   beanPrefab: {fileID: 0}
   beanInterval: 0
   startingSize: 5
   maxSizeStalk: 15
-  spawnInterval: 5
+  spawnInterval: 15
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   - {fileID: 5270794988972354108, guid: 21627e849962b5949b840ee400dc0e0e, type: 3}
