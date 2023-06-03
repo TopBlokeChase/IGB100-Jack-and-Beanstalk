@@ -121,6 +121,8 @@ public class GMController : MonoBehaviour
             Quaternion spawnRotation = stemSegment.transform.GetChild(randomIndex).rotation;
             enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).position;
             GameObject muncher = Instantiate(muncherPrefab, enemySpawnPoint, spawnRotation);
+            parentStemTrackerScript = muncher.GetComponent<ParentStemTracker>();
+            parentStemTrackerScript.ParentStem = stemSegment;
         }
         muncherSpawnTime = Time.time;
     }
@@ -137,6 +139,8 @@ public class GMController : MonoBehaviour
             Quaternion spawnRotation = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(0).rotation;
             enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(0).position;
             GameObject bonker = Instantiate(bonkerPrefab, enemySpawnPoint, spawnRotation);
+            parentStemTrackerScript = bonker.GetComponent<ParentStemTracker>();
+            parentStemTrackerScript.ParentStem = stemSegment;
         }
         bonkerSpawnTime = Time.time;
     }
@@ -159,6 +163,8 @@ public class GMController : MonoBehaviour
             Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0,360), 0);
             enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(1).position;
             GameObject bean = Instantiate(beanPrefab, enemySpawnPoint, spawnRotation);
+            parentStemTrackerScript = bean.GetComponent<ParentStemTracker>();
+            parentStemTrackerScript.ParentStem = stemSegment;
         }
         beanSpawnTime = Time.time;
     }
