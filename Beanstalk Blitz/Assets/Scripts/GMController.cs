@@ -11,11 +11,11 @@ public class GMController : MonoBehaviour
     // Enemy Spawning
     public GameObject muncherPrefab;
     private float muncherSpawnTime;
-    public float muncherinterval;
+    public float muncherInterval;
 
     public GameObject bonkerPrefab;
     private float bonkerSpawnTime;
-    public float bonkerinterval;
+    public float bonkerInterval;
 
     // Webslinger not implemented in current version
     /*public GameObject webslingerPrefab;
@@ -99,17 +99,17 @@ public class GMController : MonoBehaviour
 
     private void SpawnController()
     {
-        if (Time.time - muncherSpawnTime > muncherinterval)
+        if (Time.time - muncherSpawnTime > muncherInterval)
         {
             SpawnMuncher();
         }
-        if (Time.time - bonkerSpawnTime > bonkerinterval)
+        if (Time.time - bonkerSpawnTime > bonkerInterval)
         {
             SpawnBonker();
         }
-        if (Time.time - bonkerSpawnTime > bonkerinterval)
+        if (Time.time - beanSpawnTime > beanInterval)
         {
-            spawnBean();
+            SpawnBean();
         }
     }
 
