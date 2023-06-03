@@ -53,17 +53,15 @@ public class StemStatTracker : MonoBehaviour
     {
         hasMuncher = state;
     }
-
     public void ToggleBonker(bool state)
     {
         hasBonker = state;
     }
-
-    public void ToggleWebslinger(bool state)
+    // Webslinger not implemented in current version
+    /*public void ToggleWebslinger(bool state)
     {
         hasWebslinger = state;
-    }
-
+    }*/
     public void ToggleBean(bool state)
     {
         hasBean = state;

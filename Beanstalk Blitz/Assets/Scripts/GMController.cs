@@ -107,6 +107,10 @@ public class GMController : MonoBehaviour
         {
             SpawnBonker();
         }
+        if (Time.time - bonkerSpawnTime > bonkerinterval)
+        {
+            spawnBean();
+        }
     }
 
     private void SpawnMuncher()
@@ -126,7 +130,6 @@ public class GMController : MonoBehaviour
         }
         muncherSpawnTime = Time.time;
     }
-
     private void SpawnBonker()
     {
         GameObject stemSegment;
@@ -144,13 +147,11 @@ public class GMController : MonoBehaviour
         }
         bonkerSpawnTime = Time.time;
     }
-
     // Webslinger not implemented in current version
     /*private void SpawnWebslinger()
     {
 
     }*/
-
     private void SpawnBean()
     {
         GameObject stemSegment;
@@ -158,7 +159,7 @@ public class GMController : MonoBehaviour
         stemScript = stemSegment.GetComponent<StemStatTracker>();
         if (!stemScript.HasBonker)
         {
-            stemScript.ToggleBonker(true);
+            stemScript.ToggleBean(true);
             int randomIndex = Random.Range(2, 5);
             Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0,360), 0);
             enemySpawnPoint = stemSegment.transform.GetChild(randomIndex).transform.GetChild(0).transform.GetChild(1).position;

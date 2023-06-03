@@ -8,4 +8,9 @@ public class ParentStemTracker : MonoBehaviour
     private GameObject parentStem;
 
     public GameObject ParentStem { get { return parentStem; } set { parentStem = value; } }
+
+    public StemStatTracker ParentScript()
+    {
+        return parentStem.GetComponent<StemStatTracker>();
+    }
 }
