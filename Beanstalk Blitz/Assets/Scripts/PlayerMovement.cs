@@ -89,11 +89,6 @@ namespace BeanstalkBlitz
             {
                 stompEnemy();
             }
-
-        
-
-            
-
         }
 
         void FixedUpdate()
@@ -128,6 +123,8 @@ namespace BeanstalkBlitz
             // On ground
             if (grounded && !activeGrapple )
             {
+                // Play walking sound
+                //
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             }
 
@@ -156,6 +153,8 @@ namespace BeanstalkBlitz
 
         private void Jump()
         {
+            // Play jump sound
+            //
             // Reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -164,11 +163,16 @@ namespace BeanstalkBlitz
 
         private void ResetJump()
         {
+            // Play landing sound
+            //
+            // Allows the player to jump
             readyToJump = true;
         }
 
         private void stompEnemy()
         {
+            // Play stomp sound
+            //
             // Reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, stompForce, rb.velocity.z);
         }
@@ -207,7 +211,6 @@ namespace BeanstalkBlitz
         public void ResetRestrictions()
         {
             activeGrapple = false;
-
         }
 
         private void OnCollisionEnter(Collision collision)

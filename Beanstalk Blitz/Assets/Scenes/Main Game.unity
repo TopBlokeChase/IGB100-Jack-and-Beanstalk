@@ -1074,6 +1074,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1143741722790981605, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
+      propertyPath: predictionPoint
+      value: 
+      objectReference: {fileID: 760470294}
     - target: {fileID: 2094937881785320400, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1118,6 +1122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2094937881785320403, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
+      propertyPath: winScreen
+      value: 
+      objectReference: {fileID: 162303739}
     - target: {fileID: 2094937881785320413, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1377,7 +1385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &162303740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14471,7 +14479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
-  muncherinterval: 10
+  muncherinterval: 2
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
   bonkerinterval: 20
   beanPrefab: {fileID: 0}
@@ -14485,10 +14493,10 @@ MonoBehaviour:
   spawnAnchor: {fileID: 2040116184}
   stemMaxHealth: 3
   Map: {fileID: 1125688047}
-  stemGreen: {fileID: 0}
-  stemYellow: {fileID: 0}
-  stemOrange: {fileID: 0}
-  stemRed: {fileID: 0}
+  stemGreen: {fileID: 2800000, guid: 276d70f24f22851479024d51fdddf1da, type: 3}
+  stemYellow: {fileID: 2800000, guid: ba4d22003e5972140b40a9d3a969285a, type: 3}
+  stemOrange: {fileID: 2800000, guid: e9cad148e58788f4e98a19993adce5f4, type: 3}
+  stemRed: {fileID: 2800000, guid: 945cb97a44beea04cba54a2ffa60c561, type: 3}
   stemScript: {fileID: 0}
 --- !u!1001 &1740581376
 PrefabInstance:
