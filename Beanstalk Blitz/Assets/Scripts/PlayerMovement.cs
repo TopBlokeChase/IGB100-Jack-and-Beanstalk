@@ -51,6 +51,7 @@ namespace BeanstalkBlitz
         public bool activeGrapple;
         public float swingSpeed;
         public bool swinging;
+        public GameObject winScreen;
 
 
         void Start()
