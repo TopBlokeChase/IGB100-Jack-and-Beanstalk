@@ -14493,9 +14493,9 @@ MonoBehaviour:
   muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
   muncherinterval: 20
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
-  bonkerinterval: 2
-  beanPrefab: {fileID: 0}
-  beanInterval: 0
+  bonkerinterval: 30
+  beanPrefab: {fileID: 2095818702431456503, guid: a38d4baa17047db42bbcc7ad531669f3, type: 3}
+  beanInterval: 10
   startingSize: 5
   maxSizeStalk: 15
   spawnInterval: 15
@@ -15937,7 +15937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892111907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 1.8476126, z: -2.1861835}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
