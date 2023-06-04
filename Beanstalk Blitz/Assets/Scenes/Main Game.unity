@@ -1160,7 +1160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094937881785320403, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: bonkForce
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2094937881785320403, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: winScreen
