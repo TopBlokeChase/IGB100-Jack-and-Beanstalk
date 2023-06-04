@@ -27,7 +27,7 @@ public class MuncherBehaviour : MonoBehaviour
         // Play munch sound
 
         // Deal damage if too much time has elapsed
-        if (Time.time - munchTime > timeTODealDmg)
+        if (Time.time - munchTime >= timeToDealDmg)
         {
             munchTime = Time.time;
             stemStatTracker.ChangeHealth(-1);
