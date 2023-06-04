@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        howToPlayPanel.SetActive(false);
         pauseMenuUI.SetActive(false);
         swingingDoneScript = FindObjectOfType<SwingingDone>();
         grapplingScript = FindObjectOfType<Grappling>();
@@ -90,5 +91,19 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = false;
         Time.timeScale = 1f;
+    }
+
+    public GameObject howToPlayPanel;
+
+    public void ShowHowToPlay()
+    {
+        pauseMenuUI.SetActive(false);
+        howToPlayPanel.SetActive(true);
+    }
+
+    public void HideHowToPlay()
+    {
+        pauseMenuUI.SetActive(true);
+        howToPlayPanel.SetActive(false);
     }
 }
