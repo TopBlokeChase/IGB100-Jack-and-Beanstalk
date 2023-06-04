@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 /*
  * Code Reference
  * Author: Dave / GameDevelopment (Youtube)
@@ -73,7 +73,8 @@ namespace BeanstalkBlitz
         public bool activeGrapple;
         public float swingSpeed;
         public bool swinging;
-
+        public TextMeshProUGUI beanCountText;
+        private int collectedBeans;
 
         void Start()
         {
@@ -82,6 +83,8 @@ namespace BeanstalkBlitz
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             playerSpawn = transform.position;
+            collectedBeans = 0;
+            UpdateBeanCountText();
         }
 
         void Update()
@@ -218,7 +221,13 @@ namespace BeanstalkBlitz
 
         private void CollectBean()
         {
+            collectedBeans++;
+            UpdateBeanCountText();
+        }
 
+        private void UpdateBeanCountText()
+        {
+            beanCountText.text = "Collected Beans: " + collectedBeans.ToString();
         }
 
         //grapple hook
@@ -292,6 +301,7 @@ namespace BeanstalkBlitz
                 Bonked();
             }
         }
+ 
     }
 
 }
