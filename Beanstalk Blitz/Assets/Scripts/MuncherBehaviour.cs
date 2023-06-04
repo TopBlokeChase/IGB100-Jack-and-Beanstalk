@@ -12,7 +12,7 @@ public class MuncherBehaviour : MonoBehaviour
 
     // Variables
     public float timeToDealDmg;
-    public float munchTime;
+    private float munchTime;
 
     void Start()
     {

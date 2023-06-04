@@ -11972,7 +11972,7 @@ GameObject:
   - component: {fileID: 1524290868}
   - component: {fileID: 1524290867}
   m_Layer: 5
-  m_Name: Player (6)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13785,10 +13785,10 @@ MonoBehaviour:
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
   bonkerInterval: 30
   beanPrefab: {fileID: 2095818702431456503, guid: a38d4baa17047db42bbcc7ad531669f3, type: 3}
-  beanInterval: 20
+  beanInterval: 15
   startingSize: 5
-  maxSizeStalk: 15
-  spawnInterval: 0.5
+  maxSizeStalk: 18
+  spawnInterval: 1
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   - {fileID: 5270794988972354108, guid: 21627e849962b5949b840ee400dc0e0e, type: 3}

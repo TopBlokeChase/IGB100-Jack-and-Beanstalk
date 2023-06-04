@@ -66,6 +66,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79de510f88bc5e4bb57f754e69d3211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentStem: {fileID: 0}
+  timeToDealDmg: 30
+  munchTime: 0
 --- !u!65 &4775077778542367608
 BoxCollider:
   m_ObjectHideFlags: 0
