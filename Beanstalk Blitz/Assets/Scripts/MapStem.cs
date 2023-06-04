@@ -21,7 +21,8 @@ public class MapStem : MonoBehaviour
     [SerializeField]
     Texture playerIcon;
     private RawImage playerImage;
-    public GameObject Player;
+    public GameObject player;
+    private bool playerNear;
 
     // Visability
     private Color noColor;
@@ -44,7 +45,8 @@ public class MapStem : MonoBehaviour
         beanImage = transform.GetChild(1).GetComponent<RawImage>();
 
         // Player
-
+        playerNear = false;
+        playerImage = transform.GetChild(2).GetComponent<RawImage>();
 
         // Apply default state
         stemImage.texture = noneTexture;
@@ -53,6 +55,23 @@ public class MapStem : MonoBehaviour
         muncherImage.color = noColor;
         beanImage.texture = noneTexture;
         beanImage.color = noColor;
+        Debug.Log(transform.position.y);
+    }
+
+    void FixedUpdate()
+    {
+        float relativeY = transform.position.y + 450;
+        relativeY = relativeY * 2 / 5;
+        if (Mathf.Abs(player.transform.position.y - relativeY) <= 10 && playerNear == false)
+        {
+            playerNear = true;
+            DisplayPlayer();
+        }
+        else if (Mathf.Abs(player.transform.position.y - transform.position.y) > 10)
+        {
+            playerNear = false;
+            RemovePlayer();
+        }
     }
 
     public void SetTexture(Texture newTexture)
@@ -93,5 +112,19 @@ public class MapStem : MonoBehaviour
             beanImage.texture = noneTexture;
             beanImage.color = noColor;
         }
+    }
+
+    public void DisplayPlayer()
+    {
+        playerImage.texture = playerIcon;
+        playerImage.color = fullColor;
+        playerNear = true;
+    }
+
+    public void RemovePlayer()
+    {
+        playerImage.texture = noneTexture;
+        playerImage.color = noColor;
+        playerNear = false;
     }
 }
