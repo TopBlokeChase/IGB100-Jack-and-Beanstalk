@@ -9,12 +9,21 @@ public class MapStem : MonoBehaviour
     RawImage stemImage;
     [SerializeField]
     Texture noneTexture;
+
     [SerializeField]
     Texture muncherAlert;
     private RawImage muncherImage;
+
     [SerializeField]
     Texture beanAlert;
     private RawImage beanImage;
+
+    [SerializeField]
+    Texture playerIcon;
+    private RawImage playerImage;
+    public GameObject Player;
+
+    // Visability
     private Color noColor;
     private Color fullColor;
 
@@ -33,6 +42,8 @@ public class MapStem : MonoBehaviour
         // Alerts
         muncherImage = transform.GetChild(0).GetComponent<RawImage>();
         beanImage = transform.GetChild(1).GetComponent<RawImage>();
+
+        // Player
 
 
         // Apply default state
