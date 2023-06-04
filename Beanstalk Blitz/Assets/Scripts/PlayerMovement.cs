@@ -17,8 +17,7 @@ namespace BeanstalkBlitz
         public Vector3 gravityValue = new Vector3(0, -18f, 0);
 
         // Menus
-        [SerializeField]
-        WinScript winScript;
+        public WinScript winScript;
         public GameObject winScreen;
         public LoseScript loseScript;
         public GameObject loseScreen;
@@ -57,6 +56,7 @@ namespace BeanstalkBlitz
         // Bonk checks
         private Vector3 bonkDirection;
         public float bonkForce;
+        public float bonkLift;
 
         // Keybinds
         public KeyCode jumpKey = KeyCode.Space;
@@ -209,9 +209,11 @@ namespace BeanstalkBlitz
 
         private void Bonked()
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            Vector3 bonkWithForce = -bonkDirection * bonkForce;
-            rb.velocity = bonkWithForce + new Vector3(0, jumpForce / 2, 0);
+            Debug.Log("Bonk code");
+            Vector3 bonkVelocity = bonkDirection * bonkForce;
+            bonkVelocity.y = bonkLift;
+            Debug.Log(bonkVelocity);
+            rb.velocity = bonkVelocity;
         }
 
         private void CollectBean()
@@ -284,7 +286,8 @@ namespace BeanstalkBlitz
             }
             if (other.gameObject.tag == "BonkerHead")
             {
-                bonkDirection = new Vector3(other.transform.position.x - transform.position.x, 0f, other.transform.position.z - transform.position.z);
+                Debug.Log("BONKED!!!");
+                bonkDirection = -other.transform.up;
                 bonkDirection = bonkDirection.normalized;
                 Bonked();
             }

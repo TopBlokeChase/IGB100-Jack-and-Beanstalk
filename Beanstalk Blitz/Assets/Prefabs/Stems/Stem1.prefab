@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4730498170673859640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeafAnchor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7473320461273680748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BotAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8415996469135804287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeafAnchor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1951532715241365096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TopAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7865166221487770094}
   - component: {fileID: 6923039875904000966}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stem1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6633366125407803187}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeafAnchor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3981653172459293368}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeafAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 6476951193738875447}
   - component: {fileID: 5770078385965541178}
   - component: {fileID: 8649080340749124601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,6 +400,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf
       objectReference: {fileID: 0}
+    - target: {fileID: 7732721780925763769, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351861141073182523, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
 --- !u!4 &214236959562699942 stripped
@@ -461,6 +469,14 @@ PrefabInstance:
     - target: {fileID: 5035441014447374149, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
       propertyPath: m_Name
       value: Leaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732721780925763769, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351861141073182523, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
@@ -524,6 +540,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf
       objectReference: {fileID: 0}
+    - target: {fileID: 7732721780925763769, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351861141073182523, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
 --- !u!4 &1340043708744653914 stripped
@@ -585,6 +609,14 @@ PrefabInstance:
     - target: {fileID: 5035441014447374149, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
       propertyPath: m_Name
       value: Leaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732721780925763769, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351861141073182523, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b702e56b0c0bb7544bd35648512804ce, type: 3}

@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 1437534980195347130}
   - component: {fileID: 6476951193738875447}
   - component: {fileID: 5770078385965541178}
-  - component: {fileID: 5046787359640891393}
+  - component: {fileID: 1300356036964196488}
   m_Layer: 0
   m_Name: Stem
   m_TagString: Untagged
@@ -331,8 +331,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5046787359640891393
-CapsuleCollider:
+--- !u!64 &1300356036964196488
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -341,10 +341,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &830036944758185901
 PrefabInstance:
   m_ObjectHideFlags: 0
