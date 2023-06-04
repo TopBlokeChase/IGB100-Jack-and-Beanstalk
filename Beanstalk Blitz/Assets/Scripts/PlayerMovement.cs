@@ -18,6 +18,8 @@ namespace BeanstalkBlitz
 
         // Menus
         public WinScript winScript;
+        public GameObject winScreen;
+
 
         // Spawn
         Vector3 playerSpawn;
@@ -68,12 +70,11 @@ namespace BeanstalkBlitz
         public bool activeGrapple;
         public float swingSpeed;
         public bool swinging;
-        public GameObject winScreen;
 
 
         void Start()
         {
-
+            winScreen.SetActive(false);
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             playerSpawn = transform.position;
