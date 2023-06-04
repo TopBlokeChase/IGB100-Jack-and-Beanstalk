@@ -28,15 +28,25 @@ public class MapStem : MonoBehaviour
         rawImage.color = noColor;
     }
 
-    public void setTexture(Texture newTexture)
+    public void SetTexture(Texture newTexture)
     {
         rawImage.texture = newTexture;
         rawImage.color = fullColor;
     }
 
-    public void removeTexture()
+    public void RemoveTexture()
     {
         rawImage.texture = noneTexture;
         rawImage.color = noColor;
+    }
+
+    public void DisplayMuncher(bool state)
+    {
+
+    }
+
+    public void DisplayBean(bool state)
+    {
+
     }
 }

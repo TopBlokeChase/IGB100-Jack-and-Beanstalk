@@ -175,29 +175,27 @@ public class GMController : MonoBehaviour
         for (int i = 0; i < beanstalk.Count; i++)
         {
             stemScript = beanstalk[i].GetComponent<StemStatTracker>();
+            mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
             switch (stemScript.Health)
             {
                 case 0:
-                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
-                    mapScript.removeTexture();
+                    mapScript.RemoveTexture();
                     break;
                 case 1:
-                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
-                    mapScript.setTexture(stemRed);
+                    mapScript.SetTexture(stemRed);
                     break;
                 case 2:
-                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
-                    mapScript.setTexture(stemOrange);
+                    mapScript.SetTexture(stemOrange);
                     break;
                 case 3:
-                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
-                    mapScript.setTexture(stemYellow);
+                    mapScript.SetTexture(stemYellow);
                     break;
                 case 4:
-                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
-                    mapScript.setTexture(stemGreen);
+                    mapScript.SetTexture(stemGreen);
                     break;
             }
+            mapScript.DisplayMuncher(stemScript.HasMuncher);
+            mapScript.DisplayBean(stemScript.HasBean);
         }
     }
 
