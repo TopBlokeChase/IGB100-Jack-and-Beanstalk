@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158377460104482110}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 2.557874, y: 1.4248722, z: 1.984596}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -278,6 +278,7 @@ MonoBehaviour:
   isEnemy:
     serializedVersion: 2
     m_Bits: 512
+  bonkForce: 0
   jumpKey: 32
   player: {fileID: 2094937881785320400}
   activeGrapple: 0
@@ -456,6 +457,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2094937881785320400}
     m_Modifications:
+    - target: {fileID: 4916736146681172236, guid: fcce109f9b9ca0a4983dd56e617607cc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6959729595667269980, guid: fcce109f9b9ca0a4983dd56e617607cc, type: 3}
       propertyPath: m_RootOrder
       value: 1

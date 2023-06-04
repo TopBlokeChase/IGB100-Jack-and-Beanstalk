@@ -16,6 +16,9 @@ namespace BeanstalkBlitz
         // Change gravity on player start. Default = (0, -9.81, 0);
         public Vector3 gravityValue = new Vector3(0, -18f, 0);
 
+        // Menus
+        public WinScript winScript;
+
         // Spawn
         Vector3 playerSpawn;
 
@@ -70,6 +73,7 @@ namespace BeanstalkBlitz
 
         void Start()
         {
+
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             playerSpawn = transform.position;

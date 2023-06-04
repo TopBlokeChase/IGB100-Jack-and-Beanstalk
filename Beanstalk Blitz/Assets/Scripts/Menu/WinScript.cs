@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Win : MonoBehaviour
+public class WinScript : MonoBehaviour
 {
     public GameObject winScreen;
 
