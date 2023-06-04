@@ -275,7 +275,8 @@ namespace BeanstalkBlitz
             }
             if (other.gameObject.tag == "BonkerHead")
             {
-                bonkDirection = other.gameObject.direction.forward;
+                bonkDirection = new Vector3(other.transform.position.x - transform.position.x, 0f, other.transform.position.z - transform.position.z);
+                bonkDirection = bonkDirection.normalized;
                 Bonked();
             }
         }
