@@ -6,9 +6,15 @@ using UnityEngine.UI;
 public class MapStem : MonoBehaviour
 {
     [SerializeField]
-    RawImage rawImage;
+    RawImage stemImage;
     [SerializeField]
     Texture noneTexture;
+    [SerializeField]
+    Texture muncherAlert;
+    private RawImage muncherImage;
+    [SerializeField]
+    Texture beanAlert;
+    private RawImage beanImage;
     private Color noColor;
     private Color fullColor;
 
@@ -16,37 +22,65 @@ public class MapStem : MonoBehaviour
     void Start()
     {
         // Initiate variables
-        rawImage = GetComponent<RawImage>();
         noColor = Color.white;
         noColor.a = 0;
         fullColor = Color.white;
         fullColor.a = 1;
 
+        // Stem
+        stemImage = GetComponent<RawImage>();
+
+        // Alerts
+        muncherImage = transform.GetChild(0).GetComponent<RawImage>();
+        beanImage = transform.GetChild(1).GetComponent<RawImage>();
+
 
         // Apply default state
-        rawImage.texture = noneTexture;
-        rawImage.color = noColor;
+        stemImage.texture = noneTexture;
+        stemImage.color = noColor;
+        muncherImage.texture = noneTexture;
+        muncherImage.color = noColor;
+        beanImage.texture = noneTexture;
+        beanImage.color = noColor;
     }
 
     public void SetTexture(Texture newTexture)
     {
-        rawImage.texture = newTexture;
-        rawImage.color = fullColor;
+        stemImage.texture = newTexture;
+        stemImage.color = fullColor;
     }
 
     public void RemoveTexture()
     {
-        rawImage.texture = noneTexture;
-        rawImage.color = noColor;
+        stemImage.texture = noneTexture;
+        stemImage.color = noColor;
     }
 
     public void DisplayMuncher(bool state)
     {
-
+        if (state)
+        {
+            muncherImage.texture = muncherAlert;
+            muncherImage.color = fullColor;
+        }
+        else
+        {
+            muncherImage.texture = noneTexture;
+            muncherImage.color = noColor;
+        }
     }
 
     public void DisplayBean(bool state)
     {
-
+        if (state)
+        {
+            muncherImage.texture = beanAlert;
+            muncherImage.color = fullColor;
+        }
+        else
+        {
+            beanImage.texture = noneTexture;
+            beanImage.color = noColor;
+        }
     }
 }

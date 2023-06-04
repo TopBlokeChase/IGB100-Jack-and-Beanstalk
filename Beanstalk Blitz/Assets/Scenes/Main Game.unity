@@ -660,8 +660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &79165526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,8 +1107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &111037373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,8 +1346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &150146749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,8 +2195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!1001 &283073881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5501,8 +5509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &709483880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6028,8 +6038,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &754003097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7254,8 +7266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &945368755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8235,8 +8249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1069503766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8542,8 +8558,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1107406350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10002,8 +10020,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1332659866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11465,8 +11485,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1562567676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12415,8 +12437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1720491010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12639,13 +12663,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muncherPrefab: {fileID: 825850437582804883, guid: 55c262db593dd20478c816ff7d343583, type: 3}
-  muncherInterval: 20
+  muncherInterval: 2
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
-  bonkerInterval: 30
+  bonkerInterval: 10
   beanPrefab: {fileID: 2095818702431456503, guid: a38d4baa17047db42bbcc7ad531669f3, type: 3}
-  beanInterval: 20
+  beanInterval: 2
   startingSize: 5
-  maxSizeStalk: 15
+  maxSizeStalk: 18
   spawnInterval: 0.5
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
@@ -13299,8 +13323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1795740381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13820,8 +13846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1838487225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14573,8 +14601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1907717826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14811,8 +14841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1917456850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14980,8 +15012,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &1951003114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15810,8 +15844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97eef8d06c77cba4eba00cc588b4b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 0}
+  stemImage: {fileID: 0}
   noneTexture: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  beanAlert: {fileID: 0}
 --- !u!114 &2021307970
 MonoBehaviour:
   m_ObjectHideFlags: 0
