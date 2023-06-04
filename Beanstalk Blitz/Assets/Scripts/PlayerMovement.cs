@@ -16,6 +16,9 @@ namespace BeanstalkBlitz
         // Change gravity on player start. Default = (0, -9.81, 0);
         public Vector3 gravityValue = new Vector3(0, -18f, 0);
 
+        // Spawn
+        Vector3 playerSpawn;
+
         // Movement
         public float moveSpeed;
 
@@ -69,6 +72,7 @@ namespace BeanstalkBlitz
         {
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
+            playerSpawn = transform.position;
         }
 
         void Update()
@@ -97,6 +101,10 @@ namespace BeanstalkBlitz
         {
             Physics.gravity = gravityValue;
             MovePlayer();
+            if (transform.position.y < -5)
+            {
+                transform.position = playerSpawn;
+            }
         }
 
         private void MyInput()
