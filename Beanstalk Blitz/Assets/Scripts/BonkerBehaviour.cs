@@ -36,6 +36,6 @@ public class BonkerBehaviour : MonoBehaviour
     public void Stomped()
     {
         stemStatTracker.ToggleBonker(false);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
