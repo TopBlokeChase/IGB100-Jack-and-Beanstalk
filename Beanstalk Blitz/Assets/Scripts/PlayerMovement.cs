@@ -17,8 +17,11 @@ namespace BeanstalkBlitz
         public Vector3 gravityValue = new Vector3(0, -18f, 0);
 
         // Menus
-        public WinScript winScript;
+        [SerializeField]
+        WinScript winScript;
         public GameObject winScreen;
+        public LoseScript loseScript;
+        public GameObject loseScreen;
 
 
         // Spawn
@@ -75,6 +78,7 @@ namespace BeanstalkBlitz
         void Start()
         {
             winScreen.SetActive(false);
+            loseScreen.SetActive(false);
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             playerSpawn = transform.position;

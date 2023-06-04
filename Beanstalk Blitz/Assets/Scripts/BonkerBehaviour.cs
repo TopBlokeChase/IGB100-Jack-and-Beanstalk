@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class BonkerBehaviour : MonoBehaviour
 {
+    // Rotate to player
+    public GameObject player;
+    private Transform playerTransform;
+    public float rotationSpeed;
+
+    // Variables
     private Vector3 spawnPoint;
     public float respawnDistance;
     [SerializeField]
     private GameObject parentStem;
     private ParentStemTracker parentStemScript;
     private StemStatTracker stemStatTracker;
+
+    
     
     void Start()
     {
@@ -19,6 +27,11 @@ public class BonkerBehaviour : MonoBehaviour
         stemStatTracker = parentStemScript.ParentScript();
     }
 
+    void Update()
+    {
+        FacePlayer();
+    }
+
     void FixedUpdate()
     {
         Vector3 distance = transform.position - spawnPoint;
@@ -26,6 +39,14 @@ public class BonkerBehaviour : MonoBehaviour
         {
             Respawn();
         }
+    }
+
+    private void FacePlayer()
+    {
+        Vector3 dirToPlayer = playerTransform.position - transform.position;
+        float stepSize = rotationSpeed * Time.deltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, dirToPlayer, stepSize, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
     }
 
     private void Respawn()
