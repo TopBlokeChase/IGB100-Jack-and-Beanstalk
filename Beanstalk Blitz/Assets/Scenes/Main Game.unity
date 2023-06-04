@@ -4248,19 +4248,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 403426, guid: 55ca4401075700d46a23ae8179a79579, type: 3}
   m_PrefabInstance: {fileID: 516392097}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &521903088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9209038534715695997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a380977d21d3a5449b87e238601c619, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winScreen: {fileID: 162303739}
 --- !u!1 &522034995
 GameObject:
   m_ObjectHideFlags: 0
@@ -16959,6 +16946,7 @@ GameObject:
   - component: {fileID: 6476519078850722295}
   - component: {fileID: 3703781502261600106}
   - component: {fileID: 782832584}
+  - component: {fileID: 6476519078850722296}
   m_Layer: 10
   m_Name: Gold Sphere
   m_TagString: Goal
@@ -16974,7 +16962,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3002260579581196646}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -16987,7 +16975,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3002260579581196646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 14.82, y: 7, z: 0}
   m_LocalScale: {x: 2, y: 3.3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17143,6 +17131,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6476519078850722296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002260579581196646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a380977d21d3a5449b87e238601c619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winScreen: {fileID: 162303739}
 --- !u!4 &6857869599844301429
 Transform:
   m_ObjectHideFlags: 0
@@ -17235,7 +17236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9209038534715695997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 70}
+  m_LocalPosition: {x: 3.491, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17252,7 +17253,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9209038534715695996}
-  - component: {fileID: 521903088}
   m_Layer: 10
   m_Name: Goal
   m_TagString: Goal
