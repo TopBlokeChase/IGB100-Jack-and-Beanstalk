@@ -1075,6 +1075,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1143741722790981605, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 640735303}
+    - target: {fileID: 1143741722790981605, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -1092,7 +1096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215016606392872113, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: grappleKey
-      value: 323
+      value: 324
       objectReference: {fileID: 0}
     - target: {fileID: 2069904096603469092, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5660,6 +5664,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 423888, guid: d537224908c5f444f86c9e57e0c7234c, type: 3}
   m_PrefabInstance: {fileID: 602146986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &640735303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2094937880208156190, guid: 19c253204f2b8454e94ac025a5f379e5, type: 3}
+  m_PrefabInstance: {fileID: 109296357}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &645366153
 PrefabInstance:
