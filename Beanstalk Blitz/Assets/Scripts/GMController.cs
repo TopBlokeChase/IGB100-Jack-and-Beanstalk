@@ -219,8 +219,7 @@ public class GMController : MonoBehaviour
         currentStem = Instantiate(stemPrefab, spawnPoint, transform.rotation);
         beanstalk.Add(currentStem);
         stemScript = currentStem.GetComponent<StemStatTracker>();
-        //stemScript.InitialiseVariables(stemMaxHealth);        //Proper line, use this after testing
-        stemScript.InitialiseVariables(Random.Range(1,stemMaxHealth+1));          //Testing Only
+        stemScript.InitialiseVariables(stemMaxHealth);
         spawnTime = Time.time;
         stemPrefab = loadNextStem();
     }

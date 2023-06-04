@@ -16,8 +16,8 @@ namespace BeanstalkBlitz
         // Change gravity on player start. Default = (0, -9.81, 0);
         public Vector3 gravityValue = new Vector3(0, -18f, 0);
 
-        // Menus
-        public WinScript winScript;
+        // Menus and UI
+        public GameObject UI;
         public GameObject winScreen;
         public LoseScript loseScript;
         public GameObject loseScreen;
@@ -78,6 +78,7 @@ namespace BeanstalkBlitz
 
         void Start()
         {
+            UI.SetActive(true);
             winScreen.SetActive(false);
             loseScreen.SetActive(false);
             rb = GetComponent<Rigidbody>();
