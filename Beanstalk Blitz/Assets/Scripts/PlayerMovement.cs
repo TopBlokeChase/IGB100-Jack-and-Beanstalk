@@ -282,6 +282,7 @@ namespace BeanstalkBlitz
             if (other.gameObject.tag == "Bean")
             {
                 beanScript = other.GetComponent<BeanBehaviour>();
+                beanScript.GetBean();
                 CollectBean();
             }
             if (other.gameObject.tag == "Muncher")

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class WinScript : MonoBehaviour
 {
+    // Scoring
+    private float timeOfStart;
+    private int finalTime;
+
     private bool canRotate = true;
     private bool canMoveCamera = true;
     public GameObject winScreen;
@@ -14,6 +18,7 @@ public class WinScript : MonoBehaviour
 
     private void Start()
     {
+        timeOfStart = Time.time;
         playerCamera = FindObjectOfType<PlayerCameraBehaviour>();
     }
 
@@ -25,7 +30,7 @@ public class WinScript : MonoBehaviour
             Toggle(true);
             Time.timeScale = 0f;
             canRotate = false;
-
+            finalTime = (int) Time.time - (int) timeOfStart;
             
             if (playerCamera != null)
             {

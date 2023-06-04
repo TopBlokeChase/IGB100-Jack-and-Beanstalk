@@ -6,8 +6,6 @@ public class BeanBehaviour : MonoBehaviour
 {
     [SerializeField]
     private float rotationSpeed;
-    [SerializeField]
-    private GameObject bean;
 
     void FixedUpdate()
     {
