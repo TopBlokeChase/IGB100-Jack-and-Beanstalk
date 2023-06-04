@@ -16,6 +16,22 @@ namespace BeanstalkBlitz
         // Change gravity on player start. Default = (0, -9.81, 0);
         public Vector3 gravityValue = new Vector3(0, -18f, 0);
 
+        // Sounds
+        public AudioSource beanPickup;
+
+        public AudioSource bonkerBonk;
+        public AudioSource bonkerCharge;
+
+        public AudioSource grappleReel;
+        public AudioSource grappleLatch;
+        public AudioSource grappleShoot;
+
+        public AudioSource muncherAlert;
+        public AudioSource muncherMunching;
+
+        public AudioSource stompSound;
+
+
         // Menus and UI
         public GameObject UI;
         public GameObject winScreen;
