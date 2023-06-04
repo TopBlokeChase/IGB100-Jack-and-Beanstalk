@@ -265,11 +265,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityValue: {x: 0, y: -30, z: 0}
+  winScript: {fileID: 0}
+  winScreen: {fileID: 0}
   moveSpeed: 20
   groundDrag: 5
   jumpForce: 25
   jumpCooldown: 0.25
-  airMultiplier: 0.4
+  airMultiplier: 0.3
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
@@ -278,13 +280,12 @@ MonoBehaviour:
   isEnemy:
     serializedVersion: 2
     m_Bits: 512
-  bonkForce: 0
+  bonkForce: 50
   jumpKey: 32
   player: {fileID: 2094937881785320400}
   activeGrapple: 0
   swingSpeed: 0
   swinging: 0
-  winScreen: {fileID: 0}
 --- !u!114 &1215016606392872113
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,8 +11,13 @@ public class WinScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            winScreen.SetActive(true);
+            Toggle(true);
             Time.timeScale = 0f;
         }
+    }
+
+    public void Toggle(bool state)
+    {
+        winScreen.SetActive(false);
     }
 }
