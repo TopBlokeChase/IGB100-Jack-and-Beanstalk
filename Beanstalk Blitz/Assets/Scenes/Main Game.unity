@@ -11879,12 +11879,12 @@ MonoBehaviour:
   beanInterval: 20
   startingSize: 5
   maxSizeStalk: 15
-  spawnInterval: 15
+  spawnInterval: 0.5
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   - {fileID: 5270794988972354108, guid: 21627e849962b5949b840ee400dc0e0e, type: 3}
   spawnAnchor: {fileID: 2040116184}
-  stemMaxHealth: 3
+  stemMaxHealth: 4
   Map: {fileID: 1125688047}
   stemGreen: {fileID: 2800000, guid: 276d70f24f22851479024d51fdddf1da, type: 3}
   stemYellow: {fileID: 2800000, guid: ba4d22003e5972140b40a9d3a969285a, type: 3}
@@ -15478,7 +15478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityValue: {x: 0, y: -30, z: 0}
-  UI: {fileID: 0}
+  UI: {fileID: 1996316106}
   winScreen: {fileID: 162303739}
   loseScript: {fileID: 0}
   loseScreen: {fileID: 1864196891}
