@@ -13,4 +13,9 @@ public class BeanBehaviour : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, rotationSpeed, 0));
     }
+
+    public void GetBean()
+    {
+        Destroy(this.gameObject);
+    }
 }
