@@ -74,8 +74,8 @@ public class MapStem : MonoBehaviour
     {
         if (state)
         {
-            muncherImage.texture = beanAlert;
-            muncherImage.color = fullColor;
+            beanImage.texture = beanAlert;
+            beanImage.color = fullColor;
         }
         else
         {
