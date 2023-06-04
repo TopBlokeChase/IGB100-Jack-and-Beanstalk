@@ -28,7 +28,7 @@ namespace BeanstalkBlitz
 
         void Update()
         {
-            if (!PauseMenu.GameIsPaused)
+            if (!PauseMenu.GameIsPaused && !WinScript.hasWon)
             {
                 // Collect Mouse Input
                 float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -43,5 +43,19 @@ namespace BeanstalkBlitz
                 player.Rotate(Vector3.up * inputX);
             }
         }
+        public void SetAllowCameraRotation(bool allowRotation)
+        {
+            if (allowRotation)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+        }
     }
+
 }

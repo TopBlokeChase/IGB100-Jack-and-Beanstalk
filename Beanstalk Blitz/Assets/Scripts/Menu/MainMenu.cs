@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+    public static bool hasWon = false;
     public void PlayGame()
     {
+        hasWon = false;
         SceneManager.LoadScene("Main Game");
     }
 
