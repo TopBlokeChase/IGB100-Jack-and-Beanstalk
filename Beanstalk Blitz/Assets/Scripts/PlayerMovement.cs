@@ -67,7 +67,6 @@ namespace BeanstalkBlitz
 
         void Start()
         {
-            
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
         }
@@ -270,7 +269,10 @@ namespace BeanstalkBlitz
             {
                 bonkDirection = other.transform.position - transform.position;
                 bonkDirection.y = 0f;
+                Debug.Log("BONK!");
+                Debug.Log(bonkDirection);
                 bonkDirection = bonkDirection.normalized;
+                Debug.Log(bonkDirection);
                 Bonked();
             }
         }
