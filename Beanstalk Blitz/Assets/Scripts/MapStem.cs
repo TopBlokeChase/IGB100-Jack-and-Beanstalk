@@ -55,19 +55,18 @@ public class MapStem : MonoBehaviour
         muncherImage.color = noColor;
         beanImage.texture = noneTexture;
         beanImage.color = noColor;
-        Debug.Log(transform.position.y);
     }
 
     void FixedUpdate()
     {
-        float relativeY = transform.position.y + 450;
+        float relativeY = transform.position.y - 90;
         relativeY = relativeY * 2 / 5;
         if (Mathf.Abs(player.transform.position.y - relativeY) <= 10 && playerNear == false)
         {
             playerNear = true;
             DisplayPlayer();
         }
-        else if (Mathf.Abs(player.transform.position.y - transform.position.y) > 10)
+        else if (Mathf.Abs(player.transform.position.y - relativeY) > 10)
         {
             playerNear = false;
             RemovePlayer();
