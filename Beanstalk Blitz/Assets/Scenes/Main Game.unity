@@ -13785,10 +13785,10 @@ MonoBehaviour:
   bonkerPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
   bonkerInterval: 30
   beanPrefab: {fileID: 2095818702431456503, guid: a38d4baa17047db42bbcc7ad531669f3, type: 3}
-  beanInterval: 15
+  beanInterval: 10
   startingSize: 5
   maxSizeStalk: 18
-  spawnInterval: 1
+  spawnInterval: 45
   stemPrefabList:
   - {fileID: 5270794988972354108, guid: 1fc189fbe8c851f40be3e675c41bd3f2, type: 3}
   - {fileID: 5270794988972354108, guid: 21627e849962b5949b840ee400dc0e0e, type: 3}
@@ -18201,6 +18201,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityValue: {x: 0, y: -30, z: 0}
+  beanPickup: {fileID: 0}
+  bonkerBonk: {fileID: 0}
+  bonkerCharge: {fileID: 0}
+  grappleReel: {fileID: 0}
+  grappleLatch: {fileID: 0}
+  grappleShoot: {fileID: 0}
+  muncherAlert: {fileID: 0}
+  muncherMunching: {fileID: 0}
+  stompSound: {fileID: 0}
   UI: {fileID: 1996316106}
   winScreen: {fileID: 162303739}
   loseScript: {fileID: 0}
