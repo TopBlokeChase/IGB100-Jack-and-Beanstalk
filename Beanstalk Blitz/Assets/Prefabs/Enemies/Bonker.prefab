@@ -195,10 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnDistance: 20
   parentStem: {fileID: 0}
-  rotationSpeed: 1
-  chargeSpeed: 0
-  chargeDuration: 0
-  bonkerForwardDirection: {x: 0, y: 0, z: 0}
+  rotationSpeed: 2
+  chargeSpeed: 4
+  chargeDuration: 5
+  angleToCharge: 10
+  distanceToCharge: 10
 --- !u!136 &6340225999904627813
 CapsuleCollider:
   m_ObjectHideFlags: 0

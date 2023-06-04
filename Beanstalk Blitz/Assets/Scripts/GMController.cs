@@ -178,23 +178,23 @@ public class GMController : MonoBehaviour
             switch (stemScript.Health)
             {
                 case 0:
-                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
                     mapScript.removeTexture();
                     break;
                 case 1:
-                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
                     mapScript.setTexture(stemRed);
                     break;
                 case 2:
-                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
                     mapScript.setTexture(stemOrange);
                     break;
                 case 3:
-                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
                     mapScript.setTexture(stemYellow);
                     break;
                 case 4:
-                    mapScript = Map.transform.GetChild(i + 1).gameObject.GetComponent<MapStem>();
+                    mapScript = Map.transform.GetChild(i + 2).gameObject.GetComponent<MapStem>();
                     mapScript.setTexture(stemGreen);
                     break;
             }
